@@ -88,12 +88,14 @@ To run the application, follow these steps:
 1. **Build the project using Maven:**
    ```bash
    mvn clean install
+   ```
    
    This command will clean any previously compiled files, compile the project, run tests, and package the application into a JAR file.
       
 2. **Start the application using Docker Compose:**
    ```bash
    docker-compose up
+   ```
 
    This command will start up the Docker containers defined in your docker-compose.yml file. Ensure Docker is installed and running on your machine before executing this command.
 
