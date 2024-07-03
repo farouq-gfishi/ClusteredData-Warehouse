@@ -1,0 +1,20 @@
+2024-07-03T21:24:04.808+03:00  INFO 12678 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Starting FxdealsApplicationTests using Java 22.0.1 with PID 12678 (started by farouq-gfishi in /home/farouq-gfishi/Personal/fxdeals)
+2024-07-03T21:24:04.808+03:00  INFO 12678 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-07-03T21:24:05.146+03:00  INFO 12678 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-03T21:24:05.176+03:00  INFO 12678 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2024-07-03T21:24:05.542+03:00  INFO 12678 --- [fxdeals] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-03T21:24:05.571+03:00  INFO 12678 --- [fxdeals] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-03T21:24:05.587+03:00  INFO 12678 --- [fxdeals] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-03T21:24:05.784+03:00  INFO 12678 --- [fxdeals] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-03T21:24:05.806+03:00  INFO 12678 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-03T21:24:06.115+03:00  INFO 12678 --- [fxdeals] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50df37eb
+2024-07-03T21:24:06.117+03:00  INFO 12678 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-03T21:24:06.587+03:00  INFO 12678 --- [fxdeals] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-03T21:24:06.594+03:00 DEBUG 12678 --- [fxdeals] [main] org.hibernate.SQL                        : drop table if exists fx_deal
+2024-07-03T21:24:06.610+03:00 DEBUG 12678 --- [fxdeals] [main] org.hibernate.SQL                        : create table fx_deal (amount_deal float(53) not null, id integer not null auto_increment, local_date_time datetime(6), from_currency varchar(255) not null, to_currency varchar(255) not null, primary key (id)) engine=InnoDB
+2024-07-03T21:24:06.625+03:00  INFO 12678 --- [fxdeals] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-03T21:24:07.077+03:00  WARN 12678 --- [fxdeals] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-03T21:24:07.441+03:00  INFO 12678 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Started FxdealsApplicationTests in 3.036 seconds (process running for 4.221)
+2024-07-03T21:24:07.844+03:00  INFO 12678 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-03T21:24:07.848+03:00  INFO 12678 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-03T21:24:07.856+03:00  INFO 12678 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
