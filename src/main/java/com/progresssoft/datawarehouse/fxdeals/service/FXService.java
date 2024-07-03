@@ -18,7 +18,9 @@ public class FXService {
     }
 
     public void add(FXDeal fxDeal) {
+        logger.info("Saving FXDeal: {}", fxDeal);
         fxRepository.save(fxDeal);
+        logger.info("FXDeal saved successfully: {}", fxDeal);
     }
 
 
