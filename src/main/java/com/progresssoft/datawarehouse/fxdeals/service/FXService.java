@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class FXService {
 
-    FXRepository fxRepository;
+    private static final Logger logger = LoggerFactory.getLogger(FXService.class);
+    
+    private FXRepository fxRepository;
 
     @Autowired
     public FXService(FXRepository fxRepository) {
