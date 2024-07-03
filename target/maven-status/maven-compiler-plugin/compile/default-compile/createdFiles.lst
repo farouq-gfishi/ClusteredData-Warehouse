@@ -1,0 +1,6 @@
+com/progresssoft/datawarehouse/fxdeals/fxdeals/Application.class
+com/progresssoft/datawarehouse/fxdeals/repository/FXRepository.class
+com/progresssoft/datawarehouse/fxdeals/service/FXService.class
+com/progresssoft/datawarehouse/fxdeals/controller/FXDealsController.class
+com/progresssoft/datawarehouse/fxdeals/model/FXDeal.class
+com/progresssoft/datawarehouse/fxdeals/FxdealsApplication.class

@@ -1,0 +1,6 @@
+/home/farouq-gfishi/Personal/fxdeals/src/main/java/com/progresssoft/datawarehouse/fxdeals/FxdealsApplication.java
+/home/farouq-gfishi/Personal/fxdeals/src/main/java/com/progresssoft/datawarehouse/fxdeals/controller/FXDealsController.java
+/home/farouq-gfishi/Personal/fxdeals/src/main/java/com/progresssoft/datawarehouse/fxdeals/fxdeals/Application.java
+/home/farouq-gfishi/Personal/fxdeals/src/main/java/com/progresssoft/datawarehouse/fxdeals/model/FXDeal.java
+/home/farouq-gfishi/Personal/fxdeals/src/main/java/com/progresssoft/datawarehouse/fxdeals/repository/FXRepository.java
+/home/farouq-gfishi/Personal/fxdeals/src/main/java/com/progresssoft/datawarehouse/fxdeals/service/FXService.java

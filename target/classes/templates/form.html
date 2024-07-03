@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FX Deal Form</title>
+    <style>
+        .error {
+            color: red;
+            font-style: italic;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>FX Deal Form</h2>
+<form action="#" th:action="@{/api/save}" th:object="${fxDeal}" method="post">
+    <div>
+        <label for="fromCurrency">From Currency:</label>
+        <input type="text" id="fromCurrency" name="fromCurrency" th:field="*{fromCurrency}">
+        <span th:if="${#fields.hasErrors('fromCurrency')}" class="error" th:errors="*{fromCurrency}"></span>
+    </div>
+    <div>
+        <label for="toCurrency">To Currency:</label>
+        <input type="text" id="toCurrency" name="toCurrency" th:field="*{toCurrency}">
+        <span th:if="${#fields.hasErrors('toCurrency')}" class="error" th:errors="*{toCurrency}"></span>
+    </div>
+    <div>
+        <label for="amountDeal">Amount Deal:</label>
+        <input type="text" id="amountDeal" name="amountDeal" th:field="*{amountDeal}">
+        <span th:if="${#fields.hasErrors('amountDeal')}" class="error" th:errors="*{amountDeal}"></span>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
