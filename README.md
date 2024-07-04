@@ -13,6 +13,7 @@
    - [Logging](#logging)
    - [Unit Testing](#unit-testing)
    - [Documentation](#documentation)
+   - [Makefile](#makefile) 
 5. [Steps to Run the Application](#steps-to-run-the-application)
 6. [Conclusion](#conclusion)
 
@@ -81,23 +82,53 @@ JUnit will be used for unit testing, ensuring comprehensive test coverage across
 
 Documentation will be provided in Markdown format, covering project overview, architecture, setup instructions.
 
+### Makefile <a id="makefile"></a>
+The Makefile provides a streamlined way to manage common tasks related to building, testing, and running the application. Here are the available targets:
+
+- **build**: Cleans any previously compiled files, compiles the project, runs tests, and packages the application into a JAR file.
+    
+    ```bash
+    make build
+    ```
+
+- **run**: Starts the application using Docker Compose, ensuring all necessary containers are up and running.
+   
+   ```bash
+    make run
+    ```
+    
+- *stop**: Stops the running containers.
+    
+    ```bash
+    make stop
+    ```
+
+- **clean**: Cleans up artifacts generated during the build process. 
+    
+    ```bash
+    make clean
+    ```
+
+- **test**: Runs unit tests to ensure the application behaves as expected.
+    
+    ```bash
+    make test
+    ```
+
+- **help**: Displays a list of available Makefile targets for reference.
+    
+    ```bash
+    make help
+    ```
+
 ## 5. steps to Run the Application <a id="steps to Run the Application"></a>
 
-To run the application, follow these steps:
+To run the application: 
+ **Using Markfile**: This command will clean any previously compiled files, compiles the project, runs tests, and packages the application into a JAR file. And then will start the application using Docker Compose, ensuring all necessary containers are up and running.
 
-1. **Build the project using Maven:**
    ```bash
-   mvn clean install
+   make all
    ```
-   
-   This command will clean any previously compiled files, compile the project, run tests, and package the application into a JAR file.
-      
-2. **Start the application using Docker Compose:**
-   ```bash
-   docker-compose up
-   ```
-
-   This command will start up the Docker containers defined in your docker-compose.yml file. Ensure Docker is installed and running on your machine before executing this command.
 
 ## 6. Conclusion <a id="conclusion"></a>
 
