@@ -82,35 +82,41 @@ JUnit will be used for unit testing, ensuring comprehensive test coverage across
 
 Documentation will be provided in Markdown format, covering project overview, architecture, setup instructions.
 
-### Markfile <a id="markfile"></a>
+### Makefile <a id="makefile"></a>
 The Makefile provides a streamlined way to manage common tasks related to building, testing, and running the application. Here are the available targets:
 
-    - **build**: Cleans any previously compiled files, compiles the project, runs tests, and packages the application into a JAR file.
+- **build**: Cleans any previously compiled files, compiles the project, runs tests, and packages the application into a JAR file.
+    
     ```bash
     make build
     ```
 
-    - **run**: Starts the application using Docker Compose, ensuring all necessary containers are up and running.
-    ```bash
+- **run**: Starts the application using Docker Compose, ensuring all necessary containers are up and running.
+   
+   ```bash
     make run
     ```
     
-    - *stop**: Stops the running containers.
+- *stop**: Stops the running containers.
+    
     ```bash
     make stop
     ```
 
-    - **clean**: Cleans up artifacts generated during the build process. 
+- **clean**: Cleans up artifacts generated during the build process. 
+    
     ```bash
     make clean
     ```
 
-    - **test**: Runs unit tests to ensure the application behaves as expected.
+- **test**: Runs unit tests to ensure the application behaves as expected.
+    
     ```bash
     make test
     ```
 
-    - **help**: Displays a list of available Makefile targets for reference.
+- **help**: Displays a list of available Makefile targets for reference.
+    
     ```bash
     make help
     ```
@@ -121,7 +127,7 @@ To run the application:
  **Using Markfile**: This command will clean any previously compiled files, compiles the project, runs tests, and packages the application into a JAR file. And then will start the application using Docker Compose, ensuring all necessary containers are up and running.
 
    ```bash
-   mark all
+   make all
    ```
 
 ## 6. Conclusion <a id="conclusion"></a>
