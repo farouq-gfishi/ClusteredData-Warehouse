@@ -97,7 +97,7 @@ The Makefile provides a streamlined way to manage common tasks related to buildi
     make run
     ```
     
-- *stop**: Stops the running containers.
+- **stop**: Stops the running containers.
     
     ```bash
     make stop
