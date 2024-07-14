@@ -7,11 +7,11 @@ build:
 
 # Target to start the application using Docker Compose
 run:
-	docker-compose up
+	docker compose up
 
 # Target to stop the running containers
 stop:
-	docker-compose down
+	docker compose down
 
 # Target to clean up artifacts
 clean:
