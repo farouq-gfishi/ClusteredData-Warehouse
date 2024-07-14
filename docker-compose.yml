@@ -10,6 +10,18 @@ services:
     ports:
       - "3307:3306"
 
+  liquibase:
+    image: liquibase
+    depends_on:
+      - mysql-db
+    command:
+      - --driver=com.mysql.jdbc.Driver
+      - --changeLogFile=/db/changelog/changelog_v1.xml
+      - --url=jdbc:mysql://mysql-db:3306/home
+      - --username=root
+      - --password=P@ssw0rd
+      - update
+
   fx-deals:
     build:
       context: .
@@ -20,7 +32,6 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/home?allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: P@ssw0rd
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     ports:
       - "8081:8081"
 

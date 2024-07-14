@@ -39,5 +39,4 @@
         <dropColumn tableName="fx_deal" columnName="new_field"/>
     </changeSet>
 
-
 </databaseChangeLog>

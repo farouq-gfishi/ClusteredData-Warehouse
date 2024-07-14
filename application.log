@@ -18,3 +18,1046 @@
 2024-07-03T21:24:07.844+03:00  INFO 12678 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-07-03T21:24:07.848+03:00  INFO 12678 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-07-03T21:24:07.856+03:00  INFO 12678 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:11:20.629+03:00  INFO 84383 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Starting FxdealsApplicationTests using Java 21.0.3 with PID 84383 (started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:11:20.630+03:00  INFO 84383 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:11:21.027+03:00  INFO 84383 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:11:21.054+03:00  INFO 84383 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interface.
+2024-07-14T13:11:21.294+03:00  INFO 84383 --- [fxdeals] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:11:21.315+03:00  INFO 84383 --- [fxdeals] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:11:21.329+03:00  INFO 84383 --- [fxdeals] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:11:21.471+03:00  INFO 84383 --- [fxdeals] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:11:21.484+03:00  INFO 84383 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:11:21.663+03:00  INFO 84383 --- [fxdeals] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50de907a
+2024-07-14T13:11:21.664+03:00  INFO 84383 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:11:22.094+03:00  INFO 84383 --- [fxdeals] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:11:22.109+03:00 DEBUG 84383 --- [fxdeals] [main] org.hibernate.SQL                        : drop table if exists fx_deal
+2024-07-14T13:11:22.122+03:00 DEBUG 84383 --- [fxdeals] [main] org.hibernate.SQL                        : create table fx_deal (amount_deal float(53) not null, id integer not null auto_increment, local_date_time datetime(6), from_currency varchar(255) not null, to_currency varchar(255) not null, primary key (id)) engine=InnoDB
+2024-07-14T13:11:22.135+03:00  INFO 84383 --- [fxdeals] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:11:22.369+03:00  WARN 84383 --- [fxdeals] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:11:22.581+03:00  INFO 84383 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Started FxdealsApplicationTests in 2.112 seconds (process running for 2.6)
+2024-07-14T13:11:22.982+03:00 DEBUG 84383 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:11:23.027+03:00 DEBUG 84383 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:11:23.042+03:00 DEBUG 84383 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:11:23.054+03:00 DEBUG 84383 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:11:23.087+03:00  INFO 84383 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:11:23.089+03:00  INFO 84383 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:11:23.097+03:00  INFO 84383 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:11:44.593+03:00  INFO 84575 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Starting FxdealsApplicationTests using Java 21.0.3 with PID 84575 (started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:11:44.595+03:00  INFO 84575 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:11:44.949+03:00  INFO 84575 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:11:44.978+03:00  INFO 84575 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2024-07-14T13:11:45.201+03:00  INFO 84575 --- [fxdeals] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:11:45.224+03:00  INFO 84575 --- [fxdeals] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:11:45.238+03:00  INFO 84575 --- [fxdeals] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:11:45.388+03:00  INFO 84575 --- [fxdeals] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:11:45.399+03:00  INFO 84575 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:11:45.576+03:00  INFO 84575 --- [fxdeals] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4afcae7
+2024-07-14T13:11:45.578+03:00  INFO 84575 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:11:46.083+03:00  INFO 84575 --- [fxdeals] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:11:46.098+03:00 DEBUG 84575 --- [fxdeals] [main] org.hibernate.SQL                        : drop table if exists fx_deal
+2024-07-14T13:11:46.118+03:00 DEBUG 84575 --- [fxdeals] [main] org.hibernate.SQL                        : create table fx_deal (amount_deal float(53) not null, id integer not null auto_increment, local_date_time datetime(6), from_currency varchar(255) not null, to_currency varchar(255) not null, primary key (id)) engine=InnoDB
+2024-07-14T13:11:46.137+03:00  INFO 84575 --- [fxdeals] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:11:46.502+03:00  WARN 84575 --- [fxdeals] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:11:46.839+03:00  INFO 84575 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Started FxdealsApplicationTests in 2.4 seconds (process running for 2.878)
+2024-07-14T13:11:47.298+03:00 DEBUG 84575 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:11:47.350+03:00 DEBUG 84575 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:11:47.363+03:00 DEBUG 84575 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:11:47.370+03:00 DEBUG 84575 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:11:47.410+03:00  INFO 84575 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:11:47.411+03:00  INFO 84575 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:11:47.420+03:00  INFO 84575 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:16:07.078+03:00  INFO 85962 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Starting FxdealsApplicationTests using Java 21.0.3 with PID 85962 (started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:16:07.079+03:00  INFO 85962 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:16:07.456+03:00  INFO 85962 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:16:07.485+03:00  INFO 85962 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interface.
+2024-07-14T13:16:07.710+03:00  INFO 85962 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:16:07.981+03:00  INFO 85962 --- [fxdeals] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4cffd3fd
+2024-07-14T13:16:07.983+03:00  INFO 85962 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:16:08.009+03:00  INFO 85962 --- [fxdeals] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:16:08.034+03:00  INFO 85962 --- [fxdeals] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:16:08.050+03:00  INFO 85962 --- [fxdeals] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:16:08.227+03:00  INFO 85962 --- [fxdeals] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:16:08.738+03:00  INFO 85962 --- [fxdeals] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:16:08.739+03:00  INFO 85962 --- [fxdeals] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:16:09.034+03:00  WARN 85962 --- [fxdeals] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:16:09.268+03:00  INFO 85962 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Started FxdealsApplicationTests in 2.347 seconds (process running for 2.901)
+2024-07-14T13:16:09.669+03:00 DEBUG 85962 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:16:09.689+03:00  WARN 85962 --- [fxdeals] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1146, SQLState: 42S02
+2024-07-14T13:16:09.689+03:00 ERROR 85962 --- [fxdeals] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'home.fx_deal' doesn't exist
+2024-07-14T13:16:09.725+03:00 DEBUG 85962 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:16:09.727+03:00  WARN 85962 --- [fxdeals] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1146, SQLState: 42S02
+2024-07-14T13:16:09.727+03:00 ERROR 85962 --- [fxdeals] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'home.fx_deal' doesn't exist
+2024-07-14T13:16:09.743+03:00 DEBUG 85962 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:16:09.745+03:00  WARN 85962 --- [fxdeals] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1146, SQLState: 42S02
+2024-07-14T13:16:09.745+03:00 ERROR 85962 --- [fxdeals] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'home.fx_deal' doesn't exist
+2024-07-14T13:16:09.752+03:00 DEBUG 85962 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:16:09.754+03:00  WARN 85962 --- [fxdeals] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1146, SQLState: 42S02
+2024-07-14T13:16:09.755+03:00 ERROR 85962 --- [fxdeals] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'home.fx_deal' doesn't exist
+2024-07-14T13:16:09.796+03:00  INFO 85962 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:16:09.798+03:00  INFO 85962 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:16:09.802+03:00  INFO 85962 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:27:41.175+03:00  INFO 90365 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 90365 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:27:41.178+03:00  INFO 90365 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:27:41.223+03:00  INFO 90365 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:27:41.223+03:00  INFO 90365 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:27:41.603+03:00  INFO 90365 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:27:41.639+03:00  INFO 90365 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interface.
+2024-07-14T13:27:42.042+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:27:42.052+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:27:42.052+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:27:42.082+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:27:42.083+03:00  INFO 90365 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 860 ms
+2024-07-14T13:27:42.174+03:00  INFO 90365 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:27:42.447+03:00  INFO 90365 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d9220df
+2024-07-14T13:27:42.449+03:00  INFO 90365 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:27:42.478+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:27:42.532+03:00  INFO 90365 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:27:42.561+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:27:42.734+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:27:43.262+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:27:43.264+03:00  INFO 90365 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:27:43.423+03:00  WARN 90365 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:27:43.642+03:00  INFO 90365 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:27:43.659+03:00  WARN 90365 --- [fxdeals] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-07-14T13:27:43.660+03:00  INFO 90365 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:27:43.662+03:00  INFO 90365 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:27:43.667+03:00  INFO 90365 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:27:43.676+03:00  INFO 90365 --- [fxdeals] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-14T13:27:43.686+03:00 ERROR 90365 --- [fxdeals] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2024-07-14T13:28:16.740+03:00  INFO 90593 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 90593 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:28:16.742+03:00  INFO 90593 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:28:16.783+03:00  INFO 90593 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:28:16.783+03:00  INFO 90593 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:28:17.309+03:00  INFO 90593 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:28:17.337+03:00  INFO 90593 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2024-07-14T13:28:17.706+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:28:17.713+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:28:17.713+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:28:17.733+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:28:17.733+03:00  INFO 90593 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 950 ms
+2024-07-14T13:28:17.802+03:00  INFO 90593 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:28:18.044+03:00  INFO 90593 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@304658c
+2024-07-14T13:28:18.046+03:00  INFO 90593 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:28:18.081+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:28:18.107+03:00  INFO 90593 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:28:18.124+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:28:18.253+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:28:18.915+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:28:18.917+03:00  INFO 90593 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:28:19.218+03:00  WARN 90593 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:28:19.574+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:28:19.598+03:00  INFO 90593 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:28:19.607+03:00  INFO 90593 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.379 seconds (process running for 3.791)
+2024-07-14T13:28:31.908+03:00  INFO 90593 --- [fxdeals] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-14T13:28:31.909+03:00  INFO 90593 --- [fxdeals] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-14T13:28:31.911+03:00  INFO 90593 --- [fxdeals] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-14T13:28:40.508+03:00  INFO 90593 --- [fxdeals] [http-nio-8081-exec-2] c.p.d.fxdeals.service.FXService          : Saving FXDeal: com.progresssoft.datawarehouse.fxdeals.model.FXDeal@64fd35b9
+2024-07-14T13:28:40.558+03:00 DEBUG 90593 --- [fxdeals] [http-nio-8081-exec-2] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:28:40.598+03:00  WARN 90593 --- [fxdeals] [http-nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1146, SQLState: 42S02
+2024-07-14T13:28:40.598+03:00 ERROR 90593 --- [fxdeals] [http-nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Table 'home.fx_deal' doesn't exist
+2024-07-14T13:28:40.606+03:00 ERROR 90593 --- [fxdeals] [http-nio-8081-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement [Table 'home.fx_deal' doesn't exist] [insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)]; SQL [insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)]] with root cause
+
+java.sql.SQLSyntaxErrorException: Table 'home.fx_deal' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1054) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:670) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:272) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:391) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:305) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:137) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:757) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:741) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364) ~[spring-orm-6.1.10.jar:6.1.10]
+	at jdk.proxy4/jdk.proxy4.$Proxy120.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319) ~[spring-orm-6.1.10.jar:6.1.10]
+	at jdk.proxy4/jdk.proxy4.$Proxy120.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:629) ~[spring-data-jpa-3.3.1.jar:3.3.1]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70) ~[spring-data-commons-3.3.1.jar:3.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.1.jar:3.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.10.jar:6.1.10]
+	at jdk.proxy4/jdk.proxy4.$Proxy123.save(Unknown Source) ~[na:na]
+	at com.progresssoft.datawarehouse.fxdeals.service.FXService.add(FXService.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.10.jar:6.1.10]
+	at com.progresssoft.datawarehouse.fxdeals.service.FXService$$SpringCGLIB$$0.add(<generated>) ~[classes/:na]
+	at com.progresssoft.datawarehouse.fxdeals.controller.FXDealsController.saveFXDeal(FXDealsController.java:37) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-14T13:28:56.939+03:00  INFO 90593 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:28:56.947+03:00  INFO 90593 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:28:56.960+03:00  INFO 90593 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:28:58.553+03:00  INFO 90830 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 90830 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:28:58.556+03:00  INFO 90830 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:28:58.622+03:00  INFO 90830 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:28:58.622+03:00  INFO 90830 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:28:59.352+03:00  INFO 90830 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:28:59.385+03:00  INFO 90830 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 1 JPA repository interface.
+2024-07-14T13:28:59.734+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:28:59.741+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:28:59.741+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:28:59.761+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:28:59.761+03:00  INFO 90830 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1138 ms
+2024-07-14T13:28:59.834+03:00  INFO 90830 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:29:00.076+03:00  INFO 90830 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@407e9ec4
+2024-07-14T13:29:00.078+03:00  INFO 90830 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:29:00.103+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:29:00.124+03:00  INFO 90830 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:29:00.145+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:29:00.496+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:29:01.077+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:29:01.080+03:00  INFO 90830 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:29:01.326+03:00  WARN 90830 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:29:01.635+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:29:01.657+03:00  INFO 90830 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:29:01.666+03:00  INFO 90830 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.717 seconds (process running for 4.117)
+2024-07-14T13:30:13.401+03:00  INFO 90830 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:30:13.404+03:00  INFO 90830 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:30:13.417+03:00  INFO 90830 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:30:19.764+03:00  INFO 91175 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 91175 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:30:19.766+03:00  INFO 91175 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:30:19.810+03:00  INFO 91175 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:30:19.810+03:00  INFO 91175 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:30:20.334+03:00  INFO 91175 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:30:20.361+03:00  INFO 91175 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interface.
+2024-07-14T13:30:20.778+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:30:20.789+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:30:20.789+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:30:20.817+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:30:20.817+03:00  INFO 91175 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1007 ms
+2024-07-14T13:30:20.930+03:00  INFO 91175 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:30:21.194+03:00  INFO 91175 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f4324ef
+2024-07-14T13:30:21.197+03:00  INFO 91175 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:30:21.237+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:30:21.278+03:00  INFO 91175 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:30:21.311+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:30:21.652+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:30:22.093+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:30:22.094+03:00  INFO 91175 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:30:22.325+03:00  WARN 91175 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:30:22.524+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:30:22.541+03:00  INFO 91175 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:30:22.547+03:00  INFO 91175 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.424 seconds (process running for 4.017)
+2024-07-14T13:34:41.529+03:00  INFO 91175 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:34:41.535+03:00  INFO 91175 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:34:41.546+03:00  INFO 91175 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:34:43.147+03:00  INFO 92360 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 92360 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:34:43.150+03:00  INFO 92360 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:34:43.237+03:00  INFO 92360 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:34:43.238+03:00  INFO 92360 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:34:43.908+03:00  INFO 92360 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:34:43.985+03:00  INFO 92360 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+2024-07-14T13:34:44.375+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:34:44.389+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:34:44.389+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:34:44.459+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:34:44.460+03:00  INFO 92360 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1221 ms
+2024-07-14T13:34:44.612+03:00  INFO 92360 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:34:44.866+03:00  INFO 92360 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@203ec0ba
+2024-07-14T13:34:44.867+03:00  INFO 92360 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:34:44.895+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:34:44.927+03:00  INFO 92360 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:34:44.948+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:34:45.085+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:34:45.603+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:34:45.605+03:00  INFO 92360 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:34:45.779+03:00  WARN 92360 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:34:45.990+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:34:46.004+03:00  INFO 92360 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:34:46.016+03:00  INFO 92360 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.46 seconds (process running for 3.784)
+2024-07-14T13:36:41.616+03:00  INFO 92360 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:36:41.622+03:00  INFO 92360 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:36:41.636+03:00  INFO 92360 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:36:43.629+03:00  INFO 92759 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 92759 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:36:43.631+03:00  INFO 92759 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:36:43.662+03:00  INFO 92759 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:36:43.663+03:00  INFO 92759 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:36:44.102+03:00  INFO 92759 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:36:44.135+03:00  INFO 92759 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interface.
+2024-07-14T13:36:44.446+03:00  INFO 92759 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:36:44.454+03:00  INFO 92759 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:36:44.455+03:00  INFO 92759 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:36:44.475+03:00  INFO 92759 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:36:44.475+03:00  INFO 92759 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 812 ms
+2024-07-14T13:36:44.549+03:00  INFO 92759 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:36:45.793+03:00  INFO 92759 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:36:45.843+03:00  INFO 92759 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:36:45.883+03:00  INFO 92759 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:36:46.007+03:00  INFO 92759 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:36:46.018+03:00  INFO 92759 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:36:47.032+03:00  WARN 92759 --- [fxdeals] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.progresssoft.datawarehouse.fxdeals.FxdealsApplication.main(FxdealsApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+
+2024-07-14T13:36:47.039+03:00 ERROR 92759 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2024-07-14T13:36:47.040+03:00  WARN 92759 --- [fxdeals] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2024-07-14T13:36:47.045+03:00  INFO 92759 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-07-14T13:36:47.063+03:00  INFO 92759 --- [fxdeals] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-14T13:36:47.084+03:00 ERROR 92759 --- [fxdeals] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.progresssoft.datawarehouse.fxdeals.FxdealsApplication.main(FxdealsApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 18 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:152) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:362) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	... 33 common frames omitted
+
+2024-07-14T13:37:33.313+03:00  INFO 92922 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 92922 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:37:33.316+03:00  INFO 92922 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:37:33.350+03:00  INFO 92922 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:37:33.350+03:00  INFO 92922 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:37:33.746+03:00  INFO 92922 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:37:33.776+03:00  INFO 92922 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2024-07-14T13:37:34.151+03:00  INFO 92922 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:37:34.159+03:00  INFO 92922 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:37:34.159+03:00  INFO 92922 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:37:34.179+03:00  INFO 92922 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:37:34.179+03:00  INFO 92922 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 829 ms
+2024-07-14T13:37:34.246+03:00  INFO 92922 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:37:35.502+03:00  INFO 92922 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:37:35.557+03:00  INFO 92922 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:37:35.577+03:00  INFO 92922 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:37:35.694+03:00  INFO 92922 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:37:35.711+03:00  INFO 92922 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:37:36.738+03:00  WARN 92922 --- [fxdeals] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.progresssoft.datawarehouse.fxdeals.FxdealsApplication.main(FxdealsApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+
+2024-07-14T13:37:36.744+03:00 ERROR 92922 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2024-07-14T13:37:36.745+03:00  WARN 92922 --- [fxdeals] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2024-07-14T13:37:36.749+03:00  INFO 92922 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-07-14T13:37:36.764+03:00  INFO 92922 --- [fxdeals] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-14T13:37:36.788+03:00 ERROR 92922 --- [fxdeals] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.1.jar:3.3.1]
+	at com.progresssoft.datawarehouse.fxdeals.FxdealsApplication.main(FxdealsApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.1.jar:3.3.1]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-6.1.10.jar:6.1.10]
+	... 18 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:152) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:362) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	... 33 common frames omitted
+
+2024-07-14T13:38:18.790+03:00  INFO 93082 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 93082 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:38:18.792+03:00  INFO 93082 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:38:18.839+03:00  INFO 93082 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:38:18.840+03:00  INFO 93082 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:38:19.565+03:00  INFO 93082 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:38:19.621+03:00  INFO 93082 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2024-07-14T13:38:20.065+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:38:20.078+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:38:20.078+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:38:20.104+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:38:20.104+03:00  INFO 93082 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1264 ms
+2024-07-14T13:38:20.223+03:00  INFO 93082 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:38:20.461+03:00  INFO 93082 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29293009
+2024-07-14T13:38:20.462+03:00  INFO 93082 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:38:20.484+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:38:20.504+03:00  INFO 93082 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:38:20.517+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:38:20.643+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:38:21.224+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:38:21.226+03:00  INFO 93082 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:38:21.381+03:00  WARN 93082 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:38:21.593+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:38:21.608+03:00  INFO 93082 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:38:21.613+03:00  INFO 93082 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.242 seconds (process running for 3.586)
+2024-07-14T13:40:55.001+03:00  INFO 93082 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:40:55.005+03:00  INFO 93082 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:40:55.016+03:00  INFO 93082 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:40:57.970+03:00  INFO 93712 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 93712 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:40:57.971+03:00  INFO 93712 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:40:58.015+03:00  INFO 93712 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:40:58.015+03:00  INFO 93712 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:40:58.532+03:00  INFO 93712 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:40:58.563+03:00  INFO 93712 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
+2024-07-14T13:40:58.953+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:40:58.961+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:40:58.962+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:40:58.996+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:40:58.996+03:00  INFO 93712 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 980 ms
+2024-07-14T13:40:59.117+03:00  INFO 93712 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:40:59.357+03:00  INFO 93712 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b849737
+2024-07-14T13:40:59.358+03:00  INFO 93712 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:40:59.819+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.changelog                      : Creating database history table with name: home.DATABASECHANGELOG
+2024-07-14T13:41:00.062+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:41:00.151+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2024-07-14T13:41:00.152+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.command                        : Using deploymentId: 0953660152
+2024-07-14T13:41:00.153+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:41:00.168+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/changelog_v1.xml::1::farouq
+2024-07-14T13:41:00.183+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.changelog                      : Table fx_deal created
+2024-07-14T13:41:00.184+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelog_v1.xml::1::farouq ran successfully in 15ms
+2024-07-14T13:41:00.196+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T13:41:00.196+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.util                           : Run:                          1
+2024-07-14T13:41:00.197+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.util                           : Previously run:               0
+2024-07-14T13:41:00.197+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.util                           : Filtered out:                 0
+2024-07-14T13:41:00.197+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.util                           : -------------------------------
+2024-07-14T13:41:00.197+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.util                           : Total change sets:            1
+2024-07-14T13:41:00.197+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.util                           : Update summary generated
+2024-07-14T13:41:00.199+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.command                        : Update command completed successfully.
+2024-07-14T13:41:00.199+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
+2024-07-14T13:41:00.203+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T13:41:00.204+03:00  INFO 93712 --- [fxdeals] [restartedMain] liquibase.command                        : Command execution complete
+2024-07-14T13:41:00.269+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:41:00.311+03:00  INFO 93712 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:41:00.344+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:41:00.544+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:41:01.035+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:41:01.036+03:00  INFO 93712 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:41:01.224+03:00  WARN 93712 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:41:01.433+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:41:01.449+03:00  INFO 93712 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:41:01.455+03:00  INFO 93712 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.843 seconds (process running for 4.283)
+2024-07-14T13:41:53.239+03:00  INFO 93712 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:41:53.246+03:00  INFO 93712 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:41:53.260+03:00  INFO 93712 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:41:55.071+03:00  INFO 93909 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 93909 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:41:55.074+03:00  INFO 93909 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:41:55.123+03:00  INFO 93909 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:41:55.123+03:00  INFO 93909 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:41:55.616+03:00  INFO 93909 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:41:55.646+03:00  INFO 93909 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interface.
+2024-07-14T13:41:56.065+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:41:56.073+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:41:56.073+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:41:56.094+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:41:56.094+03:00  INFO 93909 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 970 ms
+2024-07-14T13:41:56.161+03:00  INFO 93909 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:41:56.341+03:00  INFO 93909 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44ac2ebf
+2024-07-14T13:41:56.342+03:00  INFO 93909 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:41:56.904+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:41:57.000+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2024-07-14T13:41:57.002+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.command                        : Using deploymentId: 0953717002
+2024-07-14T13:41:57.005+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:41:57.014+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/changelog_v1.xml::2::farouq
+2024-07-14T13:41:57.032+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.changelog                      : Columns new_field(varchar(8)) added to fx_deal
+2024-07-14T13:41:57.034+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelog_v1.xml::2::farouq ran successfully in 18ms
+2024-07-14T13:41:57.045+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T13:41:57.046+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.util                           : Run:                          1
+2024-07-14T13:41:57.046+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.util                           : Previously run:               1
+2024-07-14T13:41:57.046+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.util                           : Filtered out:                 0
+2024-07-14T13:41:57.046+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.util                           : -------------------------------
+2024-07-14T13:41:57.046+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.util                           : Total change sets:            2
+2024-07-14T13:41:57.046+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.util                           : Update summary generated
+2024-07-14T13:41:57.048+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.command                        : Update command completed successfully.
+2024-07-14T13:41:57.048+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
+2024-07-14T13:41:57.051+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T13:41:57.052+03:00  INFO 93909 --- [fxdeals] [restartedMain] liquibase.command                        : Command execution complete
+2024-07-14T13:41:57.096+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:41:57.121+03:00  INFO 93909 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:41:57.138+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:41:57.276+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:41:57.717+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:41:57.719+03:00  INFO 93909 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:41:57.873+03:00  WARN 93909 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:41:58.089+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:41:58.103+03:00  INFO 93909 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:41:58.108+03:00  INFO 93909 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.568 seconds (process running for 4.139)
+2024-07-14T13:42:15.210+03:00  INFO 93909 --- [fxdeals] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-14T13:42:15.211+03:00  INFO 93909 --- [fxdeals] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-14T13:42:15.213+03:00  INFO 93909 --- [fxdeals] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-07-14T13:42:24.149+03:00  INFO 93909 --- [fxdeals] [http-nio-8081-exec-2] c.p.d.fxdeals.service.FXService          : Saving FXDeal: com.progresssoft.datawarehouse.fxdeals.model.FXDeal@1f06750e
+2024-07-14T13:42:24.185+03:00 DEBUG 93909 --- [fxdeals] [http-nio-8081-exec-2] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:42:24.212+03:00  INFO 93909 --- [fxdeals] [http-nio-8081-exec-2] c.p.d.fxdeals.service.FXService          : FXDeal saved successfully: com.progresssoft.datawarehouse.fxdeals.model.FXDeal@1f06750e
+2024-07-14T13:42:32.535+03:00  INFO 93909 --- [fxdeals] [http-nio-8081-exec-5] c.p.d.fxdeals.service.FXService          : Saving FXDeal: com.progresssoft.datawarehouse.fxdeals.model.FXDeal@6efc5e81
+2024-07-14T13:42:32.537+03:00 DEBUG 93909 --- [fxdeals] [http-nio-8081-exec-5] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:42:32.541+03:00  INFO 93909 --- [fxdeals] [http-nio-8081-exec-5] c.p.d.fxdeals.service.FXService          : FXDeal saved successfully: com.progresssoft.datawarehouse.fxdeals.model.FXDeal@6efc5e81
+2024-07-14T13:44:31.211+03:00  INFO 93909 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:44:31.215+03:00  INFO 93909 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:44:31.226+03:00  INFO 93909 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:44:32.932+03:00  INFO 94615 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 94615 (/home/farouq-gfishi/Personal/test/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:44:32.936+03:00  INFO 94615 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:44:33.018+03:00  INFO 94615 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:44:33.018+03:00  INFO 94615 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:44:33.503+03:00  INFO 94615 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:44:33.530+03:00  INFO 94615 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 1 JPA repository interface.
+2024-07-14T13:44:33.926+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:44:33.939+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:44:33.940+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:44:33.972+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:44:33.972+03:00  INFO 94615 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 954 ms
+2024-07-14T13:44:34.098+03:00  INFO 94615 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:44:34.314+03:00  INFO 94615 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39becca4
+2024-07-14T13:44:34.315+03:00  INFO 94615 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:44:34.792+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:44:34.890+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2024-07-14T13:44:34.892+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.command                        : Using deploymentId: 0953874892
+2024-07-14T13:44:34.897+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:44:34.911+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/changelog_v1.xml::3::farouq
+2024-07-14T13:44:34.933+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.changelog                      : Column fx_deal.new_field dropped
+2024-07-14T13:44:34.935+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelog_v1.xml::3::farouq ran successfully in 23ms
+2024-07-14T13:44:34.955+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T13:44:34.956+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.util                           : Run:                          1
+2024-07-14T13:44:34.956+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.util                           : Previously run:               2
+2024-07-14T13:44:34.956+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.util                           : Filtered out:                 0
+2024-07-14T13:44:34.956+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.util                           : -------------------------------
+2024-07-14T13:44:34.956+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.util                           : Total change sets:            3
+2024-07-14T13:44:34.957+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.util                           : Update summary generated
+2024-07-14T13:44:34.961+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.command                        : Update command completed successfully.
+2024-07-14T13:44:34.961+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
+2024-07-14T13:44:34.968+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T13:44:34.970+03:00  INFO 94615 --- [fxdeals] [restartedMain] liquibase.command                        : Command execution complete
+2024-07-14T13:44:35.112+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:44:35.155+03:00  INFO 94615 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:44:35.180+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:44:35.356+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:44:35.773+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:44:35.774+03:00  INFO 94615 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:44:35.933+03:00  WARN 94615 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:44:36.181+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:44:36.203+03:00  INFO 94615 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:44:36.212+03:00  INFO 94615 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.727 seconds (process running for 4.106)
+2024-07-14T13:44:45.563+03:00  INFO 94615 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:44:45.567+03:00  INFO 94615 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:44:45.580+03:00  INFO 94615 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:45:06.135+03:00  INFO 94810 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Starting FxdealsApplicationTests using Java 22.0.1 with PID 94810 (started by farouq-gfishi in /home/farouq-gfishi/Personal/test/ClusteredData-Warehouse)
+2024-07-14T13:45:06.137+03:00  INFO 94810 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:45:06.501+03:00  INFO 94810 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:45:06.538+03:00  INFO 94810 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interface.
+2024-07-14T13:45:06.774+03:00  INFO 94810 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:45:06.977+03:00  INFO 94810 --- [fxdeals] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@794eeaf8
+2024-07-14T13:45:06.978+03:00  INFO 94810 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:45:07.452+03:00  INFO 94810 --- [fxdeals] [main] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:45:07.528+03:00  INFO 94810 --- [fxdeals] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-07-14T13:45:07.531+03:00  INFO 94810 --- [fxdeals] [main] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:45:07.539+03:00  INFO 94810 --- [fxdeals] [main] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T13:45:07.539+03:00  INFO 94810 --- [fxdeals] [main] liquibase.util                           : Run:                          0
+2024-07-14T13:45:07.539+03:00  INFO 94810 --- [fxdeals] [main] liquibase.util                           : Previously run:               3
+2024-07-14T13:45:07.539+03:00  INFO 94810 --- [fxdeals] [main] liquibase.util                           : Filtered out:                 0
+2024-07-14T13:45:07.539+03:00  INFO 94810 --- [fxdeals] [main] liquibase.util                           : -------------------------------
+2024-07-14T13:45:07.539+03:00  INFO 94810 --- [fxdeals] [main] liquibase.util                           : Total change sets:            3
+2024-07-14T13:45:07.540+03:00  INFO 94810 --- [fxdeals] [main] liquibase.util                           : Update summary generated
+2024-07-14T13:45:07.558+03:00  INFO 94810 --- [fxdeals] [main] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T13:45:07.560+03:00  INFO 94810 --- [fxdeals] [main] liquibase.command                        : Command execution complete
+2024-07-14T13:45:07.642+03:00  INFO 94810 --- [fxdeals] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:45:07.671+03:00  INFO 94810 --- [fxdeals] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:45:07.687+03:00  INFO 94810 --- [fxdeals] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:45:07.830+03:00  INFO 94810 --- [fxdeals] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:45:08.448+03:00  INFO 94810 --- [fxdeals] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:45:08.451+03:00  INFO 94810 --- [fxdeals] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:45:08.763+03:00  WARN 94810 --- [fxdeals] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:45:09.046+03:00  INFO 94810 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Started FxdealsApplicationTests in 3.193 seconds (process running for 3.989)
+2024-07-14T13:45:09.411+03:00 DEBUG 94810 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:45:09.470+03:00 DEBUG 94810 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:45:09.490+03:00 DEBUG 94810 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:45:09.505+03:00 DEBUG 94810 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:45:09.523+03:00  INFO 94810 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:45:09.524+03:00  INFO 94810 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:45:09.532+03:00  INFO 94810 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:54:10.561+03:00  INFO 99280 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 99280 (/home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse)
+2024-07-14T13:54:10.564+03:00  INFO 99280 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:54:10.647+03:00  INFO 99280 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T13:54:10.648+03:00  INFO 99280 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T13:54:11.264+03:00  INFO 99280 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:54:11.309+03:00  INFO 99280 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interface.
+2024-07-14T13:54:12.108+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T13:54:12.121+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T13:54:12.121+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T13:54:12.155+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T13:54:12.155+03:00  INFO 99280 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1507 ms
+2024-07-14T13:54:12.275+03:00  INFO 99280 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:54:12.551+03:00  INFO 99280 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a7ec720
+2024-07-14T13:54:12.553+03:00  INFO 99280 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:54:13.329+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:54:13.364+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-07-14T13:54:13.366+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:54:13.372+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T13:54:13.372+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.util                           : Run:                          0
+2024-07-14T13:54:13.372+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.util                           : Previously run:               3
+2024-07-14T13:54:13.372+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.util                           : Filtered out:                 0
+2024-07-14T13:54:13.372+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.util                           : -------------------------------
+2024-07-14T13:54:13.372+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.util                           : Total change sets:            3
+2024-07-14T13:54:13.372+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.util                           : Update summary generated
+2024-07-14T13:54:13.384+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T13:54:13.386+03:00  INFO 99280 --- [fxdeals] [restartedMain] liquibase.command                        : Command execution complete
+2024-07-14T13:54:13.431+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:54:13.453+03:00  INFO 99280 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:54:13.470+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:54:13.656+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:54:14.324+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:54:14.326+03:00  INFO 99280 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:54:14.485+03:00  WARN 99280 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:54:14.894+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T13:54:14.922+03:00  INFO 99280 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T13:54:14.935+03:00  INFO 99280 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 5.064 seconds (process running for 5.793)
+2024-07-14T13:54:27.368+03:00  INFO 99280 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:54:27.371+03:00  INFO 99280 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:54:27.376+03:00  INFO 99280 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T13:57:53.601+03:00  INFO 101555 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Starting FxdealsApplicationTests using Java 21.0.3 with PID 101555 (started by farouq-gfishi in /home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse)
+2024-07-14T13:57:53.601+03:00  INFO 101555 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T13:57:53.994+03:00  INFO 101555 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T13:57:54.017+03:00  INFO 101555 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2024-07-14T13:57:54.266+03:00  INFO 101555 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T13:57:54.480+03:00  INFO 101555 --- [fxdeals] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b877a54
+2024-07-14T13:57:54.481+03:00  INFO 101555 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T13:57:54.965+03:00  INFO 101555 --- [fxdeals] [main] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:57:55.020+03:00  INFO 101555 --- [fxdeals] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-07-14T13:57:55.022+03:00  INFO 101555 --- [fxdeals] [main] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T13:57:55.032+03:00  INFO 101555 --- [fxdeals] [main] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T13:57:55.032+03:00  INFO 101555 --- [fxdeals] [main] liquibase.util                           : Run:                          0
+2024-07-14T13:57:55.033+03:00  INFO 101555 --- [fxdeals] [main] liquibase.util                           : Previously run:               3
+2024-07-14T13:57:55.033+03:00  INFO 101555 --- [fxdeals] [main] liquibase.util                           : Filtered out:                 0
+2024-07-14T13:57:55.033+03:00  INFO 101555 --- [fxdeals] [main] liquibase.util                           : -------------------------------
+2024-07-14T13:57:55.033+03:00  INFO 101555 --- [fxdeals] [main] liquibase.util                           : Total change sets:            3
+2024-07-14T13:57:55.034+03:00  INFO 101555 --- [fxdeals] [main] liquibase.util                           : Update summary generated
+2024-07-14T13:57:55.047+03:00  INFO 101555 --- [fxdeals] [main] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T13:57:55.048+03:00  INFO 101555 --- [fxdeals] [main] liquibase.command                        : Command execution complete
+2024-07-14T13:57:55.116+03:00  INFO 101555 --- [fxdeals] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T13:57:55.138+03:00  INFO 101555 --- [fxdeals] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T13:57:55.155+03:00  INFO 101555 --- [fxdeals] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T13:57:55.277+03:00  INFO 101555 --- [fxdeals] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T13:57:55.655+03:00  INFO 101555 --- [fxdeals] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T13:57:55.656+03:00  INFO 101555 --- [fxdeals] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:57:55.898+03:00  WARN 101555 --- [fxdeals] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T13:57:56.169+03:00  INFO 101555 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Started FxdealsApplicationTests in 2.72 seconds (process running for 3.254)
+2024-07-14T13:57:56.600+03:00 DEBUG 101555 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:57:56.644+03:00 DEBUG 101555 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:57:56.663+03:00 DEBUG 101555 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:57:56.673+03:00 DEBUG 101555 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T13:57:56.726+03:00  INFO 101555 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T13:57:56.729+03:00  INFO 101555 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T13:57:56.737+03:00  INFO 101555 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T14:00:46.758+03:00  INFO 102644 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Starting FxdealsApplicationTests using Java 21.0.3 with PID 102644 (started by farouq-gfishi in /home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse)
+2024-07-14T14:00:46.759+03:00  INFO 102644 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T14:00:47.121+03:00  INFO 102644 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T14:00:47.149+03:00  INFO 102644 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interface.
+2024-07-14T14:00:47.410+03:00  INFO 102644 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T14:00:47.635+03:00  INFO 102644 --- [fxdeals] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6db328f8
+2024-07-14T14:00:47.637+03:00  INFO 102644 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T14:00:48.221+03:00  INFO 102644 --- [fxdeals] [main] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T14:00:48.338+03:00  INFO 102644 --- [fxdeals] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2024-07-14T14:00:48.341+03:00  INFO 102644 --- [fxdeals] [main] liquibase.command                        : Using deploymentId: 0954848340
+2024-07-14T14:00:48.345+03:00  INFO 102644 --- [fxdeals] [main] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T14:00:48.361+03:00  INFO 102644 --- [fxdeals] [main] liquibase.ui                             : Running Changeset: db/changelog/changelog_v1.xml::4::farouq
+2024-07-14T14:00:48.388+03:00  INFO 102644 --- [fxdeals] [main] liquibase.changelog                      : Table fx created
+2024-07-14T14:00:48.391+03:00  INFO 102644 --- [fxdeals] [main] liquibase.changelog                      : ChangeSet db/changelog/changelog_v1.xml::4::farouq ran successfully in 27ms
+2024-07-14T14:00:48.410+03:00  INFO 102644 --- [fxdeals] [main] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T14:00:48.411+03:00  INFO 102644 --- [fxdeals] [main] liquibase.util                           : Run:                          1
+2024-07-14T14:00:48.411+03:00  INFO 102644 --- [fxdeals] [main] liquibase.util                           : Previously run:               3
+2024-07-14T14:00:48.411+03:00  INFO 102644 --- [fxdeals] [main] liquibase.util                           : Filtered out:                 0
+2024-07-14T14:00:48.411+03:00  INFO 102644 --- [fxdeals] [main] liquibase.util                           : -------------------------------
+2024-07-14T14:00:48.411+03:00  INFO 102644 --- [fxdeals] [main] liquibase.util                           : Total change sets:            4
+2024-07-14T14:00:48.412+03:00  INFO 102644 --- [fxdeals] [main] liquibase.util                           : Update summary generated
+2024-07-14T14:00:48.415+03:00  INFO 102644 --- [fxdeals] [main] liquibase.command                        : Update command completed successfully.
+2024-07-14T14:00:48.415+03:00  INFO 102644 --- [fxdeals] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
+2024-07-14T14:00:48.421+03:00  INFO 102644 --- [fxdeals] [main] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T14:00:48.423+03:00  INFO 102644 --- [fxdeals] [main] liquibase.command                        : Command execution complete
+2024-07-14T14:00:48.535+03:00  INFO 102644 --- [fxdeals] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T14:00:48.570+03:00  INFO 102644 --- [fxdeals] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T14:00:48.593+03:00  INFO 102644 --- [fxdeals] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T14:00:48.818+03:00  INFO 102644 --- [fxdeals] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T14:00:49.286+03:00  INFO 102644 --- [fxdeals] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T14:00:49.289+03:00  INFO 102644 --- [fxdeals] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T14:00:49.620+03:00  WARN 102644 --- [fxdeals] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T14:00:49.951+03:00  INFO 102644 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Started FxdealsApplicationTests in 3.368 seconds (process running for 3.962)
+2024-07-14T14:00:50.406+03:00 DEBUG 102644 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T14:00:50.481+03:00 DEBUG 102644 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T14:00:50.502+03:00 DEBUG 102644 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T14:00:50.519+03:00 DEBUG 102644 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T14:00:50.604+03:00  INFO 102644 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T14:00:50.607+03:00  INFO 102644 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T14:00:50.628+03:00  INFO 102644 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T14:23:47.496+03:00  INFO 113301 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 113301 (/home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse)
+2024-07-14T14:23:47.499+03:00  INFO 113301 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T14:23:47.538+03:00  INFO 113301 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T14:23:47.539+03:00  INFO 113301 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T14:23:48.066+03:00  INFO 113301 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T14:23:48.096+03:00  INFO 113301 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2024-07-14T14:23:48.544+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T14:23:48.552+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T14:23:48.552+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T14:23:48.574+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T14:23:48.575+03:00  INFO 113301 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1035 ms
+2024-07-14T14:23:48.696+03:00  INFO 113301 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T14:23:49.029+03:00  INFO 113301 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3578f1a4
+2024-07-14T14:23:49.031+03:00  INFO 113301 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T14:23:49.583+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T14:23:49.650+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2024-07-14T14:23:49.651+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.command                        : Using deploymentId: 0956229651
+2024-07-14T14:23:49.653+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T14:23:49.661+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/changelog_v1.xml::5::farouq
+2024-07-14T14:23:49.682+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.changelog                      : Table fxs created
+2024-07-14T14:23:49.685+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelog_v1.xml::5::farouq ran successfully in 22ms
+2024-07-14T14:23:49.702+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T14:23:49.703+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.util                           : Run:                          1
+2024-07-14T14:23:49.703+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.util                           : Previously run:               4
+2024-07-14T14:23:49.703+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.util                           : Filtered out:                 0
+2024-07-14T14:23:49.703+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.util                           : -------------------------------
+2024-07-14T14:23:49.703+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.util                           : Total change sets:            5
+2024-07-14T14:23:49.704+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.util                           : Update summary generated
+2024-07-14T14:23:49.707+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.command                        : Update command completed successfully.
+2024-07-14T14:23:49.707+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
+2024-07-14T14:23:49.713+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T14:23:49.715+03:00  INFO 113301 --- [fxdeals] [restartedMain] liquibase.command                        : Command execution complete
+2024-07-14T14:23:49.794+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T14:23:49.826+03:00  INFO 113301 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T14:23:49.848+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T14:23:49.998+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T14:23:50.477+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T14:23:50.479+03:00  INFO 113301 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T14:23:50.631+03:00  WARN 113301 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T14:23:50.840+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T14:23:50.855+03:00  INFO 113301 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T14:23:50.860+03:00  INFO 113301 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 4.021 seconds (process running for 4.506)
+2024-07-14T14:24:39.861+03:00  INFO 113301 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T14:24:39.867+03:00  INFO 113301 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T14:24:39.877+03:00  INFO 113301 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T14:38:18.106+03:00  INFO 120463 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Starting FxdealsApplicationTests using Java 22.0.1 with PID 120463 (started by farouq-gfishi in /home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse)
+2024-07-14T14:38:18.107+03:00  INFO 120463 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T14:38:18.525+03:00  INFO 120463 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T14:38:18.553+03:00  INFO 120463 --- [fxdeals] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interface.
+2024-07-14T14:38:18.767+03:00  INFO 120463 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T14:38:18.960+03:00  INFO 120463 --- [fxdeals] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@794eeaf8
+2024-07-14T14:38:18.961+03:00  INFO 120463 --- [fxdeals] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T14:38:19.523+03:00  INFO 120463 --- [fxdeals] [main] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T14:38:19.550+03:00  INFO 120463 --- [fxdeals] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-07-14T14:38:19.552+03:00  INFO 120463 --- [fxdeals] [main] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T14:38:19.559+03:00  INFO 120463 --- [fxdeals] [main] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T14:38:19.560+03:00  INFO 120463 --- [fxdeals] [main] liquibase.util                           : Run:                          0
+2024-07-14T14:38:19.560+03:00  INFO 120463 --- [fxdeals] [main] liquibase.util                           : Previously run:               5
+2024-07-14T14:38:19.560+03:00  INFO 120463 --- [fxdeals] [main] liquibase.util                           : Filtered out:                 0
+2024-07-14T14:38:19.560+03:00  INFO 120463 --- [fxdeals] [main] liquibase.util                           : -------------------------------
+2024-07-14T14:38:19.560+03:00  INFO 120463 --- [fxdeals] [main] liquibase.util                           : Total change sets:            5
+2024-07-14T14:38:19.561+03:00  INFO 120463 --- [fxdeals] [main] liquibase.util                           : Update summary generated
+2024-07-14T14:38:19.571+03:00  INFO 120463 --- [fxdeals] [main] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T14:38:19.572+03:00  INFO 120463 --- [fxdeals] [main] liquibase.command                        : Command execution complete
+2024-07-14T14:38:19.613+03:00  INFO 120463 --- [fxdeals] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T14:38:19.635+03:00  INFO 120463 --- [fxdeals] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T14:38:19.649+03:00  INFO 120463 --- [fxdeals] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T14:38:19.798+03:00  INFO 120463 --- [fxdeals] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T14:38:20.234+03:00  INFO 120463 --- [fxdeals] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T14:38:20.237+03:00  INFO 120463 --- [fxdeals] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T14:38:20.428+03:00  WARN 120463 --- [fxdeals] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T14:38:20.716+03:00  INFO 120463 --- [fxdeals] [main] c.p.d.fxdeals.FxdealsApplicationTests    : Started FxdealsApplicationTests in 2.865 seconds (process running for 3.368)
+2024-07-14T14:38:21.056+03:00 DEBUG 120463 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T14:38:21.112+03:00 DEBUG 120463 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T14:38:21.131+03:00 DEBUG 120463 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T14:38:21.141+03:00 DEBUG 120463 --- [fxdeals] [main] org.hibernate.SQL                        : insert into fx_deal (amount_deal,from_currency,local_date_time,to_currency) values (?,?,?,?)
+2024-07-14T14:38:21.153+03:00  INFO 120463 --- [fxdeals] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T14:38:21.155+03:00  INFO 120463 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T14:38:21.161+03:00  INFO 120463 --- [fxdeals] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-14T14:39:13.625+03:00  INFO 120657 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Starting FxdealsApplication using Java 22.0.1 with PID 120657 (/home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse/target/classes started by farouq-gfishi in /home/farouq-gfishi/Personal/test/base/ClusteredData-Warehouse)
+2024-07-14T14:39:13.627+03:00  INFO 120657 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-14T14:39:13.655+03:00  INFO 120657 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-14T14:39:13.655+03:00  INFO 120657 --- [fxdeals] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-14T14:39:14.137+03:00  INFO 120657 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-14T14:39:14.182+03:00  INFO 120657 --- [fxdeals] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2024-07-14T14:39:14.550+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2024-07-14T14:39:14.558+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-14T14:39:14.558+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-14T14:39:14.579+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-14T14:39:14.580+03:00  INFO 120657 --- [fxdeals] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 925 ms
+2024-07-14T14:39:14.679+03:00  INFO 120657 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-14T14:39:14.858+03:00  INFO 120657 --- [fxdeals] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71f6a761
+2024-07-14T14:39:14.860+03:00  INFO 120657 --- [fxdeals] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-14T14:39:15.343+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T14:39:15.375+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-07-14T14:39:15.376+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.changelog                      : Reading from home.DATABASECHANGELOG
+2024-07-14T14:39:15.382+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2024-07-14T14:39:15.382+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.util                           : Run:                          0
+2024-07-14T14:39:15.382+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.util                           : Previously run:               3
+2024-07-14T14:39:15.382+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.util                           : Filtered out:                 0
+2024-07-14T14:39:15.382+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.util                           : -------------------------------
+2024-07-14T14:39:15.382+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.util                           : Total change sets:            3
+2024-07-14T14:39:15.383+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.util                           : Update summary generated
+2024-07-14T14:39:15.393+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2024-07-14T14:39:15.394+03:00  INFO 120657 --- [fxdeals] [restartedMain] liquibase.command                        : Command execution complete
+2024-07-14T14:39:15.435+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-14T14:39:15.456+03:00  INFO 120657 --- [fxdeals] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-14T14:39:15.471+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-14T14:39:15.592+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-14T14:39:15.999+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-14T14:39:16.001+03:00  INFO 120657 --- [fxdeals] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T14:39:16.167+03:00  WARN 120657 --- [fxdeals] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-14T14:39:16.423+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-14T14:39:16.440+03:00  INFO 120657 --- [fxdeals] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2024-07-14T14:39:16.448+03:00  INFO 120657 --- [fxdeals] [restartedMain] c.p.d.fxdeals.FxdealsApplication         : Started FxdealsApplication in 3.174 seconds (process running for 3.464)
+2024-07-14T14:39:36.855+03:00  INFO 120657 --- [fxdeals] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 9 class path changes (0 additions, 9 deletions, 0 modifications)
+2024-07-14T14:39:36.866+03:00  INFO 120657 --- [fxdeals] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-14T14:39:36.871+03:00  INFO 120657 --- [fxdeals] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-14T14:39:36.879+03:00  INFO 120657 --- [fxdeals] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
