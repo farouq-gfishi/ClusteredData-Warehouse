@@ -20,7 +20,7 @@ public class MysqlJpaRepository implements FxRepositoryInterface {
     }
 
     @Override
-    public void save(FXDeal fxDeal) {
-        fxJpaRepository.save(fxDeal);
+    public FXDeal save(FXDeal fxDeal) {
+        return fxJpaRepository.save(fxDeal);
     }
 }

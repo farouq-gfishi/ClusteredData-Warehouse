@@ -22,7 +22,7 @@ public class FXService {
     }
 
     @Transactional
-    public void createDeal(FXDeal fxDeal) throws DealExistsException {
+    public FXDeal createDeal(FXDeal fxDeal) throws DealExistsException {
         if (dealExist(fxDeal.getDealId())) {
             logger.info("FXDeal is already exist: {}", fxDeal);
             throw new DealExistsException("Deal is already exist");
@@ -30,7 +30,7 @@ public class FXService {
         logger.info("Saving FXDeal: {}", fxDeal);
         fxRepository.save(fxDeal);
         logger.info("FXDeal saved successfully: {}", fxDeal);
-
+        return fxDeal;
     }
 
     private boolean dealExist(int dealId) {

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FxRepositoryInterface {
     boolean existsByDealId(int dealId);
-    void save(FXDeal fxDeal);
+    FXDeal save(FXDeal fxDeal);
 }
