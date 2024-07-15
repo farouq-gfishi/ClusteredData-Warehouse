@@ -13,7 +13,7 @@ public class FXService {
 
     private static final Logger logger = LoggerFactory.getLogger(FXService.class);
     
-    private FXRepository fxRepository;
+    private final FXRepository fxRepository;
 
     @Autowired
     public FXService(FXRepository fxRepository) {
@@ -21,10 +21,21 @@ public class FXService {
     }
 
     @Transactional
-    public void add(FXDeal fxDeal) {
-        logger.info("Saving FXDeal: {}", fxDeal);
-        fxRepository.save(fxDeal);
-        logger.info("FXDeal saved successfully: {}", fxDeal);
+    public boolean createDeal(FXDeal fxDeal) {
+        if (!dealExist(fxDeal.getDealId())) {
+            logger.info("Saving FXDeal: {}", fxDeal);
+            fxRepository.save(fxDeal);
+            logger.info("FXDeal saved successfully: {}", fxDeal);
+            return true;
+        }
+        else {
+            logger.info("FXDeal is already exist: {}", fxDeal);
+            return false;
+        }
+    }
+
+    private boolean dealExist(int dealId) {
+        return fxRepository.existsByDealId(dealId);
     }
 
 

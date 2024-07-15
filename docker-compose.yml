@@ -10,18 +10,6 @@ services:
     ports:
       - "3307:3306"
 
-  liquibase:
-    image: liquibase
-    depends_on:
-      - mysql-db
-    command:
-      - --driver=com.mysql.jdbc.Driver
-      - --changeLogFile=/db/changelog/changelog_v1.xml
-      - --url=jdbc:mysql://mysql-db:3306/home
-      - --username=root
-      - --password=P@ssw0rd
-      - update
-
   fx-deals:
     build:
       context: .

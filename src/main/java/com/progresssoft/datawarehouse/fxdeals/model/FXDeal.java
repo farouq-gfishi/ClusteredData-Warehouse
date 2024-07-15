@@ -1,10 +1,8 @@
 package com.progresssoft.datawarehouse.fxdeals.model;
 
+import com.progresssoft.datawarehouse.fxdeals.exception.ValidCurrencyCode;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
 
@@ -16,49 +14,53 @@ public class FXDeal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotEmpty(message = "from currency ISO code muse be specified")
-    @Pattern(regexp = "[A-Z]{3}", message = "from currency ISO Code must be a 3-letter uppercase ISO code")
+    @Column(name="deal_id")
+    @NotNull(message = "Number cannot be null")
+    @PositiveOrZero(message = "Deal Amount must be greater than or equal to zero")
+    private Integer dealId;
+
+    @Column(name="from_currency")
+    @ValidCurrencyCode
     private String fromCurrency;
 
-    @NotEmpty(message = "to currency ISO code must not be empty")
-    @Pattern(regexp = "[A-Z]{3}", message = "to currency ISO Code must be a 3-letter uppercase ISO code")
+    @Column(name="to_currency")
+    @ValidCurrencyCode
     private String toCurrency;
 
-    private final LocalDateTime localDateTime;
+    @Column(name="date_of_deal")
+    private final LocalDateTime dateOfDeal;
 
+    @Column(name="amount_deal")
     @NotNull(message = "Deal Amount in ordering currency is required")
     @PositiveOrZero(message = "Deal Amount must be greater than or equal to zero")
-    private double amountDeal;
+    private Double amountDeal;
 
     public FXDeal() {
-        this.localDateTime = LocalDateTime.now();
+        this.dateOfDeal = LocalDateTime.now();
     }
 
-    public FXDeal(String fromCurrency, String toCurrency, double amountDeal) {
-        this.localDateTime = LocalDateTime.now();
+    public FXDeal(int dealId, String fromCurrency, String toCurrency, double amountDeal) {
+        this.dateOfDeal = LocalDateTime.now();
+        this.dealId = dealId;
         this.fromCurrency = fromCurrency;
         this.toCurrency = toCurrency;
         this.amountDeal = amountDeal;
     }
 
-    public LocalDateTime getLocalDateTime() {
-        return localDateTime;
+    public int getId() {
+        return id;
     }
 
-    public double getAmountDeal() {
-        return amountDeal;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setAmountDeal(double amountDeal) {
-        this.amountDeal = amountDeal;
+    public Integer getDealId() {
+        return dealId;
     }
 
-    public String getToCurrency() {
-        return toCurrency;
-    }
-
-    public void setToCurrency(String toCurrency) {
-        this.toCurrency = toCurrency;
+    public void setDealId(Integer dealId) {
+        this.dealId = dealId;
     }
 
     public String getFromCurrency() {
@@ -69,11 +71,23 @@ public class FXDeal {
         this.fromCurrency = fromCurrency;
     }
 
-    public int getId() {
-        return id;
+    public String getToCurrency() {
+        return toCurrency;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setToCurrency(String toCurrency) {
+        this.toCurrency = toCurrency;
+    }
+
+    public LocalDateTime getDateOfDeal() {
+        return dateOfDeal;
+    }
+
+    public Double getAmountDeal() {
+        return amountDeal;
+    }
+
+    public void setAmountDeal (Double amountDeal) {
+        this.amountDeal = amountDeal;
     }
 }

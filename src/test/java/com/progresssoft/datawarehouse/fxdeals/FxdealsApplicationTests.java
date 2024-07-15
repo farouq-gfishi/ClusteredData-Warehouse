@@ -1,93 +1,101 @@
 package com.progresssoft.datawarehouse.fxdeals;
 
 import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
-import com.progresssoft.datawarehouse.fxdeals.repository.FXRepository;
+import com.progresssoft.datawarehouse.fxdeals.service.FXService;
+import jakarta.validation.ValidationException;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+
 
 @SpringBootTest
+@ActiveProfiles("test")
 class FxdealsApplicationTests {
 
-	private FXDeal fxDeal;
-
 	@Autowired
-	private FXRepository fxRepository;
-
-	@BeforeEach
-	public void setUp() {
-		fxDeal = new FXDeal();
-	}
+	private FXService fxService;
 
 	@Test
-	public void testFxDealNotEmpty() {
-		Assertions.assertThrows(Exception.class, () -> fxRepository.save(fxDeal));
-	}
-
-	@Test
-	public void testFxDealWithEmptyField() {
+	public void testFxDealWithNullFromCurrency() {
+		FXDeal fxDeal = new FXDeal();
+		fxDeal.setDealId(1);
 		fxDeal.setToCurrency("USD");
-		fxDeal.setAmountDeal(100.12);
-		// the from currency is empty
-		Assertions.assertThrows(Exception.class, () -> fxRepository.save(fxDeal));
+		fxDeal.setAmountDeal(10.2);
+		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+	}
+
+	@Test
+	public void testFxDealWithNullToCurrency() {
+		FXDeal fxDeal = new FXDeal();
+		fxDeal.setDealId(2);
+		fxDeal.setFromCurrency("EUR");
+		fxDeal.setAmountDeal(10.2);
+		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+	}
+
+	@Test
+	public void testFxDealWithNullDealAmount() {
+		FXDeal fxDeal = new FXDeal();
+		fxDeal.setDealId(3);
+		fxDeal.setFromCurrency("EUR");
+		fxDeal.setFromCurrency("USD");
+		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
 	}
 
 	@Test
 	public void testFxDealWithAllFields() {
-		fxDeal.setFromCurrency("EUR");
-		fxDeal.setToCurrency("USD");
-		fxDeal.setAmountDeal(100.12);
-		Assertions.assertDoesNotThrow(() -> fxRepository.save(fxDeal));
+		FXDeal fxDeal = new FXDeal(4, "EUR", "USD", 102.45);
+		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
 	}
 
 	@Test
-	public void testFromCurrencyContainsThreeLetters() {
-		fxDeal.setFromCurrency("EUR");
-		fxDeal.setToCurrency("USD");
-		fxDeal.setAmountDeal(100.12);
-		Assertions.assertDoesNotThrow(() -> fxRepository.save(fxDeal));
+	public void testValidDealId() {
+		FXDeal fxDeal = new FXDeal(5, "EUR", "USD", 102.45);
+		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
 	}
 
 	@Test
-	public void testFromCurrencyDoesContainsThreeLetters() {
-		fxDeal.setFromCurrency("EEUR");
-		fxDeal.setToCurrency("USD");
-		fxDeal.setAmountDeal(100.12);
-		Assertions.assertThrows(Exception.class, () -> fxRepository.save(fxDeal));
+	public void testInValidDealId() {
+		FXDeal fxDeal = new FXDeal(-5, "EUR", "USD", 102.45);
+		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
 	}
 
 	@Test
-	public void testToCurrencyDoesContainsThreeLetters() {
-		fxDeal.setFromCurrency("EUR");
-		fxDeal.setToCurrency("UUSD");
-		fxDeal.setAmountDeal(100.12);
-		Assertions.assertThrows(Exception.class, () -> fxRepository.save(fxDeal));
+	public void testValidFromCurrency() {
+		FXDeal fxDeal = new FXDeal(6, "EUR", "USD", 102.45);
+		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
 	}
 
 	@Test
-	public void testAmountGreaterThenZero() {
-		fxDeal.setFromCurrency("EUR");
-		fxDeal.setToCurrency("USD");
-		fxDeal.setAmountDeal(1.01);
-		Assertions.assertDoesNotThrow(() -> fxRepository.save(fxDeal));
+	public void testInValidFromCurrency() {
+		FXDeal fxDeal = new FXDeal(6, "KKK", "USD", 102.45);
+		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
 	}
 
 	@Test
-	public void testAmountEqualZero() {
-		fxDeal.setFromCurrency("EUR");
-		fxDeal.setToCurrency("USD");
-		fxDeal.setAmountDeal(0);
-		Assertions.assertDoesNotThrow(() -> fxRepository.save(fxDeal));
+	public void testValidToCurrency() {
+		FXDeal fxDeal = new FXDeal(7, "EUR", "USD", 102.45);
+		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
 	}
 
 	@Test
-	public void testAmountLessThanZero() {
-		fxDeal.setFromCurrency("EUR");
-		fxDeal.setToCurrency("USD");
-		fxDeal.setAmountDeal(-1.5);
-		Assertions.assertThrows(Exception.class, () -> fxRepository.save(fxDeal));
+	public void testInValidToCurrency() {
+		FXDeal fxDeal = new FXDeal(6, "EUR", "KKK", 102.45);
+		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+	}
+
+	@Test
+	public void testValidDealAmount() {
+		FXDeal fxDeal = new FXDeal(8, "EUR", "USD", 102.45);
+		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
+	}
+
+	@Test
+	public void testInValidDealAmount() {
+		FXDeal fxDeal = new FXDeal(8, "EUR", "USD", -102.45);
+		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
 	}
 
 }

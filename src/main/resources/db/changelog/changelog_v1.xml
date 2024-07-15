@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
+
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
@@ -14,6 +15,9 @@
             <column  name="id"  type="int"  autoIncrement="true">
                 <constraints  primaryKey="true"  nullable="false"/>
             </column>
+            <column  name="deal_id"  type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
             <column  name="from_currency"  type="CHAR(3)">
                 <constraints  nullable="false"/>
             </column>
@@ -23,20 +27,10 @@
             <column  name="amount_deal"  type="DECIMAL(10,2)">
                 <constraints  nullable="false"/>
             </column>
-            <column name="local_date_time" type="DATE">
+            <column name="date_of_deal" type="DATE">
                 <constraints  nullable="false"/>
             </column>
         </createTable>
-    </changeSet>
-
-    <changeSet  id="2"  author="farouq">
-        <addColumn  tableName="fx_deal">
-            <column  name="new_field"  type="varchar(8)"/>
-        </addColumn>
-    </changeSet>
-
-    <changeSet id="3" author="farouq">
-        <dropColumn tableName="fx_deal" columnName="new_field"/>
     </changeSet>
 
 </databaseChangeLog>
