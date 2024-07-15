@@ -23,7 +23,8 @@ class FxdealsApplicationTests {
 		fxDeal.setDealId(1);
 		fxDeal.setToCurrency("USD");
 		fxDeal.setAmountDeal(10.2);
-		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
 	}
 
 	@Test
@@ -32,7 +33,8 @@ class FxdealsApplicationTests {
 		fxDeal.setDealId(2);
 		fxDeal.setFromCurrency("EUR");
 		fxDeal.setAmountDeal(10.2);
-		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
 	}
 
 	@Test
@@ -41,61 +43,66 @@ class FxdealsApplicationTests {
 		fxDeal.setDealId(3);
 		fxDeal.setFromCurrency("EUR");
 		fxDeal.setFromCurrency("USD");
-		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(validationException.getMessage().contains("Deal Amount in ordering currency is required"));
 	}
 
 	@Test
 	public void testFxDealWithAllFields() {
 		FXDeal fxDeal = new FXDeal(4, "EUR", "USD", 102.45);
-		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(fxService.createDeal(fxDeal));
 	}
 
 	@Test
 	public void testValidDealId() {
 		FXDeal fxDeal = new FXDeal(5, "EUR", "USD", 102.45);
-		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(fxService.createDeal(fxDeal));
 	}
 
 	@Test
 	public void testInValidDealId() {
 		FXDeal fxDeal = new FXDeal(-5, "EUR", "USD", 102.45);
-		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(validationException.getMessage().contains("Deal Id must be greater than or equal to zero"));
 	}
 
 	@Test
 	public void testValidFromCurrency() {
 		FXDeal fxDeal = new FXDeal(6, "EUR", "USD", 102.45);
-		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(fxService.createDeal(fxDeal));
 	}
 
 	@Test
 	public void testInValidFromCurrency() {
 		FXDeal fxDeal = new FXDeal(6, "KKK", "USD", 102.45);
-		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
 	}
 
 	@Test
 	public void testValidToCurrency() {
 		FXDeal fxDeal = new FXDeal(7, "EUR", "USD", 102.45);
-		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(fxService.createDeal(fxDeal));
 	}
 
 	@Test
 	public void testInValidToCurrency() {
 		FXDeal fxDeal = new FXDeal(6, "EUR", "KKK", 102.45);
-		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
 	}
 
 	@Test
 	public void testValidDealAmount() {
 		FXDeal fxDeal = new FXDeal(8, "EUR", "USD", 102.45);
-		Assertions.assertDoesNotThrow(() -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(fxService.createDeal(fxDeal));
 	}
 
 	@Test
 	public void testInValidDealAmount() {
 		FXDeal fxDeal = new FXDeal(8, "EUR", "USD", -102.45);
-		Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
+		Assertions.assertTrue(validationException.getMessage().contains("Deal Amount must be greater than or equal to zero"));
 	}
 
 }

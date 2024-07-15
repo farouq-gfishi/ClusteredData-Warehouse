@@ -16,7 +16,7 @@ public class FXDeal {
 
     @Column(name="deal_id")
     @NotNull(message = "Number cannot be null")
-    @PositiveOrZero(message = "Deal Amount must be greater than or equal to zero")
+    @PositiveOrZero(message = "Deal Id must be greater than or equal to zero")
     private Integer dealId;
 
     @Column(name="from_currency")
