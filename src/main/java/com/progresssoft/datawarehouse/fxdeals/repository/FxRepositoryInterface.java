@@ -1,8 +1,10 @@
 package com.progresssoft.datawarehouse.fxdeals.repository;
 
 import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface FXRepository extends JpaRepository<FXDeal, Integer> {
+@Repository
+public interface FxRepositoryInterface {
     boolean existsByDealId(int dealId);
+    void save(FXDeal fxDeal);
 }

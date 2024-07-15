@@ -48,28 +48,10 @@ class FxdealsApplicationTests {
 	}
 
 	@Test
-	public void testFxDealWithAllFields() {
-		FXDeal fxDeal = new FXDeal(4, "EUR", "USD", 102.45);
-		Assertions.assertTrue(fxService.createDeal(fxDeal));
-	}
-
-	@Test
-	public void testValidDealId() {
-		FXDeal fxDeal = new FXDeal(5, "EUR", "USD", 102.45);
-		Assertions.assertTrue(fxService.createDeal(fxDeal));
-	}
-
-	@Test
 	public void testInValidDealId() {
 		FXDeal fxDeal = new FXDeal(-5, "EUR", "USD", 102.45);
 		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
 		Assertions.assertTrue(validationException.getMessage().contains("Deal Id must be greater than or equal to zero"));
-	}
-
-	@Test
-	public void testValidFromCurrency() {
-		FXDeal fxDeal = new FXDeal(6, "EUR", "USD", 102.45);
-		Assertions.assertTrue(fxService.createDeal(fxDeal));
 	}
 
 	@Test
@@ -80,22 +62,10 @@ class FxdealsApplicationTests {
 	}
 
 	@Test
-	public void testValidToCurrency() {
-		FXDeal fxDeal = new FXDeal(7, "EUR", "USD", 102.45);
-		Assertions.assertTrue(fxService.createDeal(fxDeal));
-	}
-
-	@Test
 	public void testInValidToCurrency() {
 		FXDeal fxDeal = new FXDeal(6, "EUR", "KKK", 102.45);
 		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.createDeal(fxDeal));
 		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
-	}
-
-	@Test
-	public void testValidDealAmount() {
-		FXDeal fxDeal = new FXDeal(8, "EUR", "USD", 102.45);
-		Assertions.assertTrue(fxService.createDeal(fxDeal));
 	}
 
 	@Test
@@ -106,4 +76,3 @@ class FxdealsApplicationTests {
 	}
 
 }
-

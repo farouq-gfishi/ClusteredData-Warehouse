@@ -1,5 +1,6 @@
 package com.progresssoft.datawarehouse.fxdeals.controller;
 
+import com.progresssoft.datawarehouse.fxdeals.exception.DealExistsException;
 import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import com.progresssoft.datawarehouse.fxdeals.service.FXService;
 import jakarta.validation.Valid;
@@ -29,13 +30,7 @@ public class FXDealsController {
     }
 
     @PostMapping("/create-deal")
-    public ResponseEntity<String> saveFXDeal(@Valid @RequestBody FXDeal fxDeal) {
-        boolean DealCreated = fxService.createDeal(fxDeal);
-        if(DealCreated) {
-            return ResponseEntity.status(HttpStatus.CREATED).body("FXDeal saved successfully");
-        }
-        else {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("FXDeal already exists");
-        }
+    public void saveFXDeal(@Valid @RequestBody FXDeal fxDeal) throws DealExistsException {
+        fxService.createDeal(fxDeal);
     }
 }
