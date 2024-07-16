@@ -1,22 +1,9 @@
 package com.progresssoft.datawarehouse.fxdeals.controller;
 
 import com.progresssoft.datawarehouse.fxdeals.exception.DealExistsException;
-import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import com.progresssoft.datawarehouse.fxdeals.service.FXService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -29,8 +16,8 @@ public class FXDealsController {
         this.fxService = fxService;
     }
 
-    @PostMapping("/create-deal")
-    public void saveFXDeal(@Valid @RequestBody FXDeal fxDeal) throws DealExistsException {
-        fxService.createDeal(fxDeal);
+    @PostMapping("/save-deal")
+    public void saveFXDeal() throws DealExistsException {
+        fxService.processingDeal();
     }
 }

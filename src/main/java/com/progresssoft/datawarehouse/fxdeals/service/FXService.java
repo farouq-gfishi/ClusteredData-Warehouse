@@ -16,9 +16,17 @@ public class FXService {
     
     private final FxRepositoryInterface fxRepository;
 
+    private final MessageListenerService messageListenerService;
+
     @Autowired
-    public FXService(FxRepositoryInterface fxRepository) {
+    public FXService(FxRepositoryInterface fxRepository, MessageListenerService messageListenerService) {
         this.fxRepository = fxRepository;
+        this.messageListenerService = messageListenerService;
+    }
+
+    public void processingDeal() throws DealExistsException {
+        FXDeal fxDeal = messageListenerService.receiveMessage();
+        createDeal(fxDeal);
     }
 
     @Transactional
@@ -36,6 +44,4 @@ public class FXService {
     private boolean dealExist(int dealId) {
         return fxRepository.existsByDealId(dealId);
     }
-
-
 }

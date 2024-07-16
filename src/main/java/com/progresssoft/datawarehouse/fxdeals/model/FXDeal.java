@@ -4,11 +4,12 @@ import com.progresssoft.datawarehouse.fxdeals.exception.ValidCurrencyCode;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "fx_deal")
-public class FXDeal {
+public class FXDeal implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +40,7 @@ public class FXDeal {
         this.dateOfDeal = LocalDateTime.now();
     }
 
-    public FXDeal(int dealId, String fromCurrency, String toCurrency, double amountDeal) {
+    public FXDeal(Integer dealId, String fromCurrency, String toCurrency, Double amountDeal) {
         this.dateOfDeal = LocalDateTime.now();
         this.dealId = dealId;
         this.fromCurrency = fromCurrency;
@@ -89,5 +90,17 @@ public class FXDeal {
 
     public void setAmountDeal (Double amountDeal) {
         this.amountDeal = amountDeal;
+    }
+
+    @Override
+    public String toString() {
+        return "FXDeal{" +
+                "id=" + id +
+                ", dealId=" + dealId +
+                ", fromCurrency='" + fromCurrency + '\'' +
+                ", toCurrency='" + toCurrency + '\'' +
+                ", dateOfDeal=" + dateOfDeal +
+                ", amountDeal=" + amountDeal +
+                '}';
     }
 }
