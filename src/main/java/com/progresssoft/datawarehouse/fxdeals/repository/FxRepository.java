@@ -4,7 +4,7 @@ import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FxRepositoryInterface {
+public interface FxRepository {
     boolean existsByDealId(int dealId);
     FXDeal save(FXDeal fxDeal);
 }

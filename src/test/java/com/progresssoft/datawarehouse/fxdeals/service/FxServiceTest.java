@@ -2,7 +2,7 @@ package com.progresssoft.datawarehouse.fxdeals.service;
 
 import com.progresssoft.datawarehouse.fxdeals.exception.DealExistsException;
 import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
-import com.progresssoft.datawarehouse.fxdeals.repository.FxRepositoryInterface;
+import com.progresssoft.datawarehouse.fxdeals.repository.FxRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 public class FxServiceTest {
 
     @Mock
-    private FxRepositoryInterface fxRepository;
+    private FxRepository fxRepository;
 
     @InjectMocks
     private FXService fxService;
@@ -26,7 +26,7 @@ public class FxServiceTest {
     public void FxService_CreateDeal_ReturnsFxDeal() throws DealExistsException {
         FXDeal fxDeal = new FXDeal(1, "USD", "EUR", 121.15);
         when(fxRepository.save(fxDeal)).thenReturn(fxDeal);
-        FXDeal savedDeal = fxService.createDeal(fxDeal);
+        FXDeal savedDeal = fxService.saveDeal(fxDeal);
         assertNotNull(savedDeal);
         assertEquals(savedDeal, fxDeal);
         verify(fxRepository, times(1)).save(fxDeal);
@@ -36,7 +36,7 @@ public class FxServiceTest {
     public void FxService_CreateDeal_DuplicateDeal() {
         FXDeal fxDeal = new FXDeal(1, "USD", "EUR", 121.15);
         when(fxRepository.existsByDealId(fxDeal.getDealId())).thenReturn(true);
-        assertThrows(DealExistsException.class, () -> fxService.createDeal(fxDeal));
+        assertThrows(DealExistsException.class, () -> fxService.saveDeal(fxDeal));
         verify(fxRepository, never()).save(any());
     }
 }

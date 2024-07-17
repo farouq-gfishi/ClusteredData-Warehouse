@@ -1,7 +1,9 @@
 package com.progresssoft.datawarehouse.fxdeals.controller;
 
 import com.progresssoft.datawarehouse.fxdeals.exception.DealExistsException;
+import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import com.progresssoft.datawarehouse.fxdeals.service.FXService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +19,7 @@ public class FXDealsController {
     }
 
     @PostMapping("/save-deal")
-    public void saveFXDeal() throws DealExistsException {
-        fxService.processingDeal();
+    public void saveFXDeal(@Valid @RequestBody FXDeal fxDeal) throws DealExistsException {
+        fxService.saveDeal(fxDeal);
     }
 }

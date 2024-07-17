@@ -5,18 +5,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MysqlJpaRepository implements FxRepositoryInterface {
+public class MysqlRepository implements FxRepository {
 
     private final FxJpaRepository fxJpaRepository;
 
     @Autowired
-    public MysqlJpaRepository(FxJpaRepository fxRepository) {
+    public MysqlRepository(FxJpaRepository fxRepository) {
         this.fxJpaRepository = fxRepository;
     }
 
     @Override
     public boolean existsByDealId(int dealId) {
-        return fxJpaRepository.existsById(dealId);
+        return fxJpaRepository.existsByDealId(dealId);
     }
 
     @Override

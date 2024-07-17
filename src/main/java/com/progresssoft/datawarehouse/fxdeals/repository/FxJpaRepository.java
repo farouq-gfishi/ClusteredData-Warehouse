@@ -5,4 +5,5 @@ import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FxJpaRepository extends JpaRepository<FXDeal, Integer> {
+    boolean existsByDealId(int dealId);
 }

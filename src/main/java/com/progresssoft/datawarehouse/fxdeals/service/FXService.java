@@ -2,7 +2,7 @@ package com.progresssoft.datawarehouse.fxdeals.service;
 
 import com.progresssoft.datawarehouse.fxdeals.exception.DealExistsException;
 import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
-import com.progresssoft.datawarehouse.fxdeals.repository.FxRepositoryInterface;
+import com.progresssoft.datawarehouse.fxdeals.repository.FxRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,25 +14,17 @@ public class FXService {
 
     private static final Logger logger = LoggerFactory.getLogger(FXService.class);
     
-    private final FxRepositoryInterface fxRepository;
-
-    private final MessageListenerService messageListenerService;
+    private final FxRepository fxRepository;
 
     @Autowired
-    public FXService(FxRepositoryInterface fxRepository, MessageListenerService messageListenerService) {
+    public FXService(FxRepository fxRepository) {
         this.fxRepository = fxRepository;
-        this.messageListenerService = messageListenerService;
-    }
-
-    public void processingDeal() throws DealExistsException {
-        FXDeal fxDeal = messageListenerService.receiveMessage();
-        createDeal(fxDeal);
     }
 
     @Transactional
-    public FXDeal createDeal(FXDeal fxDeal) throws DealExistsException {
+    public FXDeal saveDeal(FXDeal fxDeal) throws DealExistsException {
         if (dealExist(fxDeal.getDealId())) {
-            logger.info("FXDeal is already exist: {}", fxDeal);
+            logger.warn("FXDeal is already exist: {}", fxDeal);
             throw new DealExistsException("Deal is already exist");
         }
         logger.info("Saving FXDeal: {}", fxDeal);
@@ -44,4 +36,6 @@ public class FXService {
     private boolean dealExist(int dealId) {
         return fxRepository.existsByDealId(dealId);
     }
+
+
 }

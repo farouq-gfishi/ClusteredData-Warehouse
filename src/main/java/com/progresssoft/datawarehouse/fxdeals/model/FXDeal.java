@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "fx_deal")
-public class FXDeal implements Serializable {
+public class FXDeal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +40,7 @@ public class FXDeal implements Serializable {
         this.dateOfDeal = LocalDateTime.now();
     }
 
-    public FXDeal(Integer dealId, String fromCurrency, String toCurrency, Double amountDeal) {
+    public FXDeal(int dealId, String fromCurrency, String toCurrency, double amountDeal) {
         this.dateOfDeal = LocalDateTime.now();
         this.dealId = dealId;
         this.fromCurrency = fromCurrency;
@@ -90,17 +90,5 @@ public class FXDeal implements Serializable {
 
     public void setAmountDeal (Double amountDeal) {
         this.amountDeal = amountDeal;
-    }
-
-    @Override
-    public String toString() {
-        return "FXDeal{" +
-                "id=" + id +
-                ", dealId=" + dealId +
-                ", fromCurrency='" + fromCurrency + '\'' +
-                ", toCurrency='" + toCurrency + '\'' +
-                ", dateOfDeal=" + dateOfDeal +
-                ", amountDeal=" + amountDeal +
-                '}';
     }
 }
