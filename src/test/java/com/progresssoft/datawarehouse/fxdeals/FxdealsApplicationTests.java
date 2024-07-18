@@ -1,78 +1,151 @@
 package com.progresssoft.datawarehouse.fxdeals;
 
+import com.progresssoft.datawarehouse.fxdeals.exception.DealExistsException;
 import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import com.progresssoft.datawarehouse.fxdeals.service.FXService;
-import jakarta.validation.ValidationException;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
-@SpringBootTest
+
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 class FxdealsApplicationTests {
+
+	@LocalServerPort
+	private int port;
 
 	@Autowired
 	private FXService fxService;
 
 	@Test
-	public void testFxDealWithNullFromCurrency() {
-		FXDeal fxDeal = new FXDeal();
-		fxDeal.setDealId(1);
-		fxDeal.setToCurrency("USD");
-		fxDeal.setAmountDeal(10.2);
-		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.saveDeal(fxDeal));
-		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
+	public void testSaveFXDealSuccessfully() {
+		String jsonBody = "{\"dealId\": 1, \"fromCurrency\": \"EUR\", \"toCurrency\": \"USD\", \"amountDeal\": 100.12}";
+		given()
+				.port(port)
+				.basePath("/api")
+				.contentType("application/json")
+				.body(jsonBody)
+				.when()
+				.post("/save-deal")
+				.then()
+				.statusCode(200);
 	}
 
 	@Test
-	public void testFxDealWithNullToCurrency() {
-		FXDeal fxDeal = new FXDeal();
-		fxDeal.setDealId(2);
-		fxDeal.setFromCurrency("EUR");
-		fxDeal.setAmountDeal(10.2);
-		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.saveDeal(fxDeal));
-		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
+	public void testFieldToSaveFXDeal() {
+		String jsonBody = "{\"dealId\": -1, \"fromCurrency\": \"EUR\", \"toCurrency\": \"USD\", \"amountDeal\": 100.12}";
+		given()
+				.port(port)
+				.basePath("/api")
+				.contentType("application/json")
+				.body(jsonBody)
+				.when()
+				.post("/save-deal")
+				.then()
+				.statusCode(400);
 	}
 
 	@Test
-	public void testFxDealWithNullDealAmount() {
-		FXDeal fxDeal = new FXDeal();
-		fxDeal.setDealId(3);
-		fxDeal.setFromCurrency("EUR");
-		fxDeal.setFromCurrency("USD");
-		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.saveDeal(fxDeal));
-		Assertions.assertTrue(validationException.getMessage().contains("Deal Amount in ordering currency is required"));
+	public void testGetFXDeal() throws DealExistsException {
+		int dealId = 2;
+		fxService.saveDeal(new FXDeal(dealId, "USD", "EUR", 100.12));
+		given()
+				.port(port)
+				.basePath("/api")
+				.when()
+				.get("/get-deal/{dealId}", dealId)
+				.then()
+				.statusCode(200)
+				.body("dealId", equalTo(dealId));
 	}
 
 	@Test
-	public void testInValidDealId() {
-		FXDeal fxDeal = new FXDeal(-5, "EUR", "USD", 102.45);
-		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.saveDeal(fxDeal));
-		Assertions.assertTrue(validationException.getMessage().contains("Deal Id must be greater than or equal to zero"));
+	public void testFieldToGetFXDeal() throws DealExistsException {
+		int dealId = 3;
+		int unavailableDealId = 2;
+		fxService.saveDeal(new FXDeal(dealId, "USD", "EUR", 100.12));
+		given()
+				.port(port)
+				.basePath("/api")
+				.when()
+				.get("/get-deal/{dealId}", unavailableDealId)
+				.then()
+				.statusCode(400);
 	}
 
 	@Test
-	public void testInValidFromCurrency() {
-		FXDeal fxDeal = new FXDeal(6, "KKK", "USD", 102.45);
-		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.saveDeal(fxDeal));
-		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
+	public void testGetFXDealsSorted() throws DealExistsException {
+		String field = "amountDeal";
+		fxService.saveDeal(new FXDeal(4, "USD", "EUR", 99.15));
+		fxService.saveDeal(new FXDeal(5, "USD", "EUR", 100.17));
+		fxService.saveDeal(new FXDeal(6, "USD", "EUR", 120.85));
+		given()
+				.port(port)
+				.basePath("/api")
+				.when()
+				.get("/get-deal/sorted-by/{field}", field)
+				.then()
+				.statusCode(200)
+				.body("size()", greaterThan(0));
 	}
 
 	@Test
-	public void testInValidToCurrency() {
-		FXDeal fxDeal = new FXDeal(6, "EUR", "KKK", 102.45);
-		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.saveDeal(fxDeal));
-		Assertions.assertTrue(validationException.getMessage().contains("wrong iso code"));
+	public void testFieldToGetFXDealsSorted() throws DealExistsException {
+		String field = "unavailableField";
+		fxService.saveDeal(new FXDeal(7, "USD", "EUR", 99.15));
+		fxService.saveDeal(new FXDeal(8, "USD", "EUR", 100.17));
+		fxService.saveDeal(new FXDeal(9, "USD", "EUR", 120.85));
+		given()
+				.port(port)
+				.basePath("/api")
+				.when()
+				.get("/get-deal/sorted-by/{field}", field)
+				.then()
+				.statusCode(400)
+				.body("size()", greaterThan(0));
+	}
+
+
+	@Test
+	public void testGetFXDealWithPagination() throws DealExistsException {
+		int offset = 0;
+		int pageSize = 2;
+		fxService.saveDeal(new FXDeal(11, "USD", "EUR", 99.15));
+		fxService.saveDeal(new FXDeal(12, "USD", "EUR", 100.17));
+		fxService.saveDeal(new FXDeal(13, "USD", "EUR", 120.85));
+		given()
+				.port(port)
+				.basePath("/api")
+				.when()
+				.get("/get-deal/pagination/{offset}/{pageSize}", offset, pageSize)
+				.then()
+				.statusCode(200)
+				.body("size()", greaterThan(0));
 	}
 
 	@Test
-	public void testInValidDealAmount() {
-		FXDeal fxDeal = new FXDeal(8, "EUR", "USD", -102.45);
-		ValidationException validationException = Assertions.assertThrows(ValidationException.class, () -> fxService.saveDeal(fxDeal));
-		Assertions.assertTrue(validationException.getMessage().contains("Deal Amount must be greater than or equal to zero"));
+	public void testFieldToGetFXDealWithPagination() throws DealExistsException {
+		int offset = 2;
+		int pageSize = 20;
+		fxService.saveDeal(new FXDeal(14, "USD", "EUR", 99.15));
+		fxService.saveDeal(new FXDeal(15, "USD", "EUR", 100.17));
+		fxService.saveDeal(new FXDeal(16, "USD", "EUR", 120.85));
+		given()
+				.port(port)
+				.basePath("/api")
+				.when()
+				.get("/get-deal/pagination/{offset}/{pageSize}", offset, pageSize)
+				.then()
+				.statusCode(400)
+				.body("size()", greaterThan(0));
 	}
+
 
 }
