@@ -5,7 +5,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "fx_deal")
@@ -90,5 +93,13 @@ public class FXDeal {
 
     public void setAmountDeal (Double amountDeal) {
         this.amountDeal = amountDeal;
+    }
+
+    public static Set<String> getFields() {
+        Set<String> fields = new HashSet<>();
+        for (Field field : FXDeal.class.getDeclaredFields()) {
+            fields.add(field.getName());
+        }
+        return fields;
     }
 }
