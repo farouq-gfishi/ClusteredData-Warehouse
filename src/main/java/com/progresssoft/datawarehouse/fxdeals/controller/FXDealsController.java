@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// TODO: add unit testing
-
 @RestController
 @RequestMapping("/api")
 public class FXDealsController {
@@ -32,7 +30,7 @@ public class FXDealsController {
 
     @GetMapping("/get-deal/{dealId}")
     public FXDeal getFXDeal(@PathVariable int dealId) throws DealNotFoundException {
-        return fxService.getFXDeal(dealId);
+        return fxService.getFXDealByDealId(dealId);
     }
 
     @GetMapping("/get-deal/sorted-by/{field}")

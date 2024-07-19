@@ -39,7 +39,7 @@ public class FXService {
     }
 
     // TODO: read about @Transactional(readOnly = true)
-    public FXDeal getFXDeal(int dealId) throws DealNotFoundException {
+    public FXDeal getFXDealByDealId(int dealId) throws DealNotFoundException {
         if(dealExist(dealId)) {
             logger.info("Retrieving FXDeal: {}", dealId);
             return fxRepository.getDealById(dealId);
@@ -49,32 +49,39 @@ public class FXService {
     }
 
     public List<FXDeal> getAllFXDealsSorted(String field) throws FiledNotFoundException {
-        boolean fieldExist = false;
-        for(String classField:FXDeal.getFields()) {
-            if(classField.equals(field)) {
-                fieldExist = true;
-                break;
-            }
-        }
-        if(!fieldExist) {
+        if(!fieldExist(field)) {
+            logger.warn("field not found");
             throw new FiledNotFoundException("Field not found");
         }
+        logger.info("getting all FX Deals sorted");
         return fxRepository.findAllBySorting(field);
     }
 
     public List<FXDeal> getAllFXDealsWithPagination(int offset, int pageSize) throws FiledNotFoundException, PaginationValueException {
         if (offset < 0 || pageSize <= 0) {
+            logger.warn("offset or page size is negative");
             throw new PaginationValueException("Offset must be greater than or equal to 0 and pageSize must be greater than 0");
         }
         Page<FXDeal> pageResult = fxRepository.findAllWithPagination(offset, pageSize);
         if (pageResult.isEmpty()) {
+            logger.warn("No FX Deals found");
             throw new FiledNotFoundException("No FXDeals found for the given pagination");
         }
+        logger.info("getting all FX Deals with pagination");
         return pageResult.getContent();
     }
 
     private boolean dealExist(int dealId) {
         return fxRepository.existsByDealId(dealId);
+    }
+
+    private boolean fieldExist(String field) {
+        for(String classField:FXDeal.getFields()) {
+            if(classField.equals(field)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
