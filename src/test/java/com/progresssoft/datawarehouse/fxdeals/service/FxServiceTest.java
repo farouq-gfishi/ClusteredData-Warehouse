@@ -52,7 +52,7 @@ public class FxServiceTest {
         FXDeal fxDeal = new FXDeal(dealId, "USD", "EUR", 121.15);
         when(fxRepository.existsByDealId(dealId)).thenReturn(true);
         when(fxRepository.getDealById(dealId)).thenReturn(fxDeal);
-        FXDeal retrievedDeal = fxService.getFXDeal(dealId);
+        FXDeal retrievedDeal = fxService.getFXDealByDealId(dealId);
         assertNotNull(retrievedDeal);
         assertEquals(retrievedDeal, fxDeal);
     }
@@ -61,7 +61,7 @@ public class FxServiceTest {
     public void FxService_GetFXDeal_DealNotFound() {
         int dealId = 1;
         when(fxRepository.existsByDealId(dealId)).thenReturn(false);
-        assertThrows(DealNotFoundException.class, () -> fxService.getFXDeal(dealId));
+        assertThrows(DealNotFoundException.class, () -> fxService.getFXDealByDealId(dealId));
     }
 
     @Test

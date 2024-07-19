@@ -39,7 +39,7 @@ public class FXDealsControllerTest {
     void testGetFXDealById() throws DealNotFoundException {
         int dealId = 1;
         FXDeal fxDeal = new FXDeal(1, "EUR", "USD", 100.12);
-        when(fxService.getFXDeal(dealId)).thenReturn(fxDeal);
+        when(fxService.getFXDealByDealId(dealId)).thenReturn(fxDeal);
         Assertions.assertEquals(fxDeal, fxDealsController.getFXDeal(dealId));
     }
 
