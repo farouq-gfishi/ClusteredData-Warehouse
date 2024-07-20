@@ -29,22 +29,24 @@ public class FXDealsControllerTest {
     private FXDealsController fxDealsController;
 
     @Test
-    void testSaveFXDeal() throws DealExistsException {
+    void FxController_SaveDeal_ReturnsFxDeal() throws DealExistsException {
         FXDeal fxDeal = new FXDeal(1, "EUR", "USD", 100.12);
-        fxDealsController.saveFXDeal(fxDeal);
-        Assertions.assertDoesNotThrow(() -> fxDealsController.saveFXDeal(fxDeal));
+        when(fxService.saveDeal(fxDeal)).thenReturn(fxDeal);
+        FXDeal savedDeal = fxDealsController.saveFXDeal(fxDeal);
+        Assertions.assertEquals(savedDeal, fxDeal);
     }
 
     @Test
-    void testGetFXDealById() throws DealNotFoundException {
+    void FxController_GetFXDeal_ReturnsFxDeal() throws DealNotFoundException {
         int dealId = 1;
         FXDeal fxDeal = new FXDeal(1, "EUR", "USD", 100.12);
         when(fxService.getFXDealByDealId(dealId)).thenReturn(fxDeal);
-        Assertions.assertEquals(fxDeal, fxDealsController.getFXDeal(dealId));
+        FXDeal returnedDeal = fxDealsController.getFXDeal(dealId);
+        Assertions.assertEquals(fxDeal, returnedDeal);
     }
 
     @Test
-    void testGetFXDealsSorted() throws FiledNotFoundException {
+    void FxController_GetFXDealsSorted_ReturnsFxDeal() throws FiledNotFoundException {
         String field = "field";
         List<FXDeal> fxDeals = new ArrayList<>(
                 Arrays.asList(
@@ -53,11 +55,12 @@ public class FXDealsControllerTest {
                 )
         );
         when(fxService.getAllFXDealsSorted(field)).thenReturn(fxDeals);
-        Assertions.assertEquals(fxDeals, fxDealsController.getFXDealsSorted(field));
+        List<FXDeal> returnedDeals = fxDealsController.getFXDealsSorted(field);
+        Assertions.assertEquals(fxDeals, returnedDeals);
     }
 
     @Test
-    void testGetFXDealsWithPagination() throws FiledNotFoundException, PaginationValueException {
+    void FxController_GetFXDealWithPagination_ReturnsFxDeal() throws FiledNotFoundException, PaginationValueException {
         int offset = 0;
         int pageSize = 10;
         List<FXDeal> fxDeals = new ArrayList<>(
@@ -67,6 +70,7 @@ public class FXDealsControllerTest {
                 )
         );
         when(fxService.getAllFXDealsWithPagination(offset, pageSize)).thenReturn(fxDeals);
-        Assertions.assertEquals(fxDeals, fxDealsController.getFXDealWithPagination(offset, pageSize));
+        List<FXDeal> returnedDeals = fxDealsController.getFXDealWithPagination(offset, pageSize);
+        Assertions.assertEquals(fxDeals, returnedDeals);
     }
 }

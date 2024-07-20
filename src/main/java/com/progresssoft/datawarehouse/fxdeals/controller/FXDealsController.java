@@ -24,8 +24,8 @@ public class FXDealsController {
     }
 
     @PostMapping("/save-deal")
-    public void saveFXDeal(@Valid @RequestBody FXDeal fxDeal) throws DealExistsException {
-        fxService.saveDeal(fxDeal);
+    public FXDeal saveFXDeal(@Valid @RequestBody FXDeal fxDeal) throws DealExistsException {
+        return fxService.saveDeal(fxDeal);
     }
 
     @GetMapping("/get-deal/{dealId}")

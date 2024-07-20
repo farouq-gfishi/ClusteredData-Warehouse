@@ -7,8 +7,10 @@ import com.progresssoft.datawarehouse.fxdeals.exception.PaginationValueException
 import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import com.progresssoft.datawarehouse.fxdeals.repository.FxRepository;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -20,8 +22,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
-@ActiveProfiles("test")
+@ExtendWith(MockitoExtension.class)
 public class FxServiceTest {
 
     @Mock
@@ -33,6 +34,7 @@ public class FxServiceTest {
     @Test
     public void FxService_SaveDeal_ReturnsFxDeal() throws DealExistsException {
         FXDeal fxDeal = new FXDeal(1, "USD", "EUR", 121.15);
+        when(fxRepository.findByDealId(fxDeal.getDealId())).thenReturn(false);
         when(fxRepository.save(fxDeal)).thenReturn(fxDeal);
         FXDeal savedDeal = fxService.saveDeal(fxDeal);
         assertNotNull(savedDeal);
@@ -42,7 +44,7 @@ public class FxServiceTest {
     @Test
     public void FxService_SaveDeal_DuplicateDeal() {
         FXDeal fxDeal = new FXDeal(1, "USD", "EUR", 121.15);
-        when(fxRepository.existsByDealId(fxDeal.getDealId())).thenReturn(true);
+        when(fxRepository.findByDealId(fxDeal.getDealId())).thenReturn(true);
         assertThrows(DealExistsException.class, () -> fxService.saveDeal(fxDeal));
     }
 
@@ -50,7 +52,7 @@ public class FxServiceTest {
     public void FxService_GetFXDeal_ReturnsFxDeal() throws DealNotFoundException {
         int dealId = 1;
         FXDeal fxDeal = new FXDeal(dealId, "USD", "EUR", 121.15);
-        when(fxRepository.existsByDealId(dealId)).thenReturn(true);
+        when(fxRepository.findByDealId(dealId)).thenReturn(true);
         when(fxRepository.getDealById(dealId)).thenReturn(fxDeal);
         FXDeal retrievedDeal = fxService.getFXDealByDealId(dealId);
         assertNotNull(retrievedDeal);
@@ -60,7 +62,7 @@ public class FxServiceTest {
     @Test
     public void FxService_GetFXDeal_DealNotFound() {
         int dealId = 1;
-        when(fxRepository.existsByDealId(dealId)).thenReturn(false);
+        when(fxRepository.findByDealId(dealId)).thenReturn(false);
         assertThrows(DealNotFoundException.class, () -> fxService.getFXDealByDealId(dealId));
     }
 

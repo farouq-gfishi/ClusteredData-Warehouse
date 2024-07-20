@@ -72,7 +72,7 @@ public class FXService {
     }
 
     private boolean dealExist(int dealId) {
-        return fxRepository.existsByDealId(dealId);
+        return fxRepository.findByDealId(dealId);
     }
 
     private boolean fieldExist(String field) {

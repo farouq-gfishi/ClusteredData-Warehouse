@@ -20,7 +20,7 @@ public class MysqlRepository implements FxRepository {
     }
 
     @Override
-    public boolean existsByDealId(int dealId) {
+    public boolean findByDealId(int dealId) {
         return fxJpaRepository.existsByDealId(dealId);
     }
 

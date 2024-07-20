@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface FxRepository {
-    boolean existsByDealId(int dealId);
+    boolean findByDealId(int dealId);
     FXDeal save(FXDeal fxDeal);
     FXDeal getDealById(int dealId);
     List<FXDeal> findAllBySorting(String field);

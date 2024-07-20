@@ -12,25 +12,25 @@ import java.util.List;
 
 @DataJpaTest
 @ActiveProfiles("test")
-@ComponentScan(basePackages = "com.progresssoft.datawarehouse.fxdeals.repository")
+@ComponentScan
 public class MysqlRepositoryTest {
 
     @Autowired
     private FxRepository fxRepository;
 
     @Test
-    public void MysqlRepository_ExistByDealId_ReturnTrue() {
+    public void MysqlRepository_FindByDealId_ReturnTrue() {
         FXDeal fxDeal = new FXDeal(1, "USD", "EUR", 142.1);
         fxRepository.save(fxDeal);
-        boolean savedDeal = fxRepository.existsByDealId(fxDeal.getDealId());
+        boolean savedDeal = fxRepository.findByDealId(fxDeal.getDealId());
         Assertions.assertTrue(savedDeal);
     }
 
     @Test
-    public void MysqlRepository_ExistByDealId_ReturnFalse() {
+    public void MysqlRepository_FindByDealId_ReturnFalse() {
         FXDeal fxDeal = new FXDeal(1, "USD", "EUR", 142.1);
         fxRepository.save(fxDeal);
-        boolean savedDeal = fxRepository.existsByDealId(2);
+        boolean savedDeal = fxRepository.findByDealId(2);
         Assertions.assertFalse(savedDeal);
     }
 
@@ -55,11 +55,19 @@ public class MysqlRepositoryTest {
     }
 
     @Test
+    public void MysqlRepository_GetDealById_ReturnNull() {
+        FXDeal fxDeal = new FXDeal(1, "USD", "EUR", 142.1);
+        fxRepository.save(fxDeal);
+        FXDeal retrievedDeal = fxRepository.getDealById(2);
+        Assertions.assertNull(retrievedDeal);
+    }
+
+    @Test
     public void MysqlRepository_FindAllBySorting_ReturnSortedDeals() {
         FXDeal fxDeal1 = new FXDeal(1, "USD", "EUR", 142.1);
         FXDeal fxDeal2 = new FXDeal(2, "EUR", "USD", 112.5);
-        fxRepository.save(fxDeal1);
         fxRepository.save(fxDeal2);
+        fxRepository.save(fxDeal1);
         List<FXDeal> sortedDeals = fxRepository.findAllBySorting("dealId");
         Assertions.assertEquals(2, sortedDeals.size());
         Assertions.assertEquals(1, sortedDeals.get(0).getDealId());
