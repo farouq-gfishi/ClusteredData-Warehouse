@@ -4,6 +4,7 @@ import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,6 @@ public class MysqlRepository implements FxRepository {
 
     private final FxJpaRepository fxJpaRepository;
 
-    @Autowired
     public MysqlRepository(FxJpaRepository fxRepository) {
         this.fxJpaRepository = fxRepository;
     }
@@ -42,6 +42,11 @@ public class MysqlRepository implements FxRepository {
     @Override
     public Page<FXDeal> findAllWithPagination(int offset, int pageSize) {
         return fxJpaRepository.findAll(PageRequest.of(offset,pageSize));
+    }
+
+    @Override
+    public Page<FXDeal> findAllSortedWithPagination(Pageable pageable) {
+        return fxJpaRepository.findAll(pageable);
     }
 
 }

@@ -10,6 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -21,7 +24,6 @@ public class FXService {
     
     private final FxRepository fxRepository;
 
-    @Autowired
     public FXService(FxRepository fxRepository) {
         this.fxRepository = fxRepository;
     }
@@ -38,7 +40,6 @@ public class FXService {
         return fxDeal;
     }
 
-    // TODO: read about @Transactional(readOnly = true)
     public FXDeal getFXDealByDealId(int dealId) throws DealNotFoundException {
         if(dealExist(dealId)) {
             logger.info("Retrieving FXDeal: {}", dealId);
@@ -71,6 +72,25 @@ public class FXService {
         return pageResult.getContent();
     }
 
+    public List<FXDeal> getAllFXDealsSortedWithPagination(int offset, int pageSize, String field) throws FiledNotFoundException, PaginationValueException {
+        if(!fieldExist(field)) {
+            logger.warn("field not found");
+            throw new FiledNotFoundException("Field not found");
+        }
+        if (offset < 0 || pageSize <= 0) {
+            logger.warn("offset or page size is negative");
+            throw new PaginationValueException("Offset must be greater than or equal to 0 and pageSize must be greater than 0");
+        }
+        Pageable paging = PageRequest.of(offset, pageSize, Sort.by(field));
+        Page<FXDeal> fxDealList = fxRepository.findAllSortedWithPagination(paging);
+        if (fxDealList.isEmpty()) {
+            logger.warn("No FX Deals found");
+            throw new FiledNotFoundException("No FXDeals found for the given pagination");
+        }
+        logger.info("getting all FX Deals sorted with pagination");
+        return fxDealList.getContent();
+    }
+
     private boolean dealExist(int dealId) {
         return fxRepository.findByDealId(dealId);
     }
@@ -83,5 +103,4 @@ public class FXService {
         }
         return false;
     }
-
 }

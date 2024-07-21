@@ -8,6 +8,7 @@ import com.progresssoft.datawarehouse.fxdeals.model.FXDeal;
 import com.progresssoft.datawarehouse.fxdeals.service.FXService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,6 @@ public class FXDealsController {
 
     private final FXService fxService;
 
-    @Autowired
     public FXDealsController(FXService fxService) {
         this.fxService = fxService;
     }
@@ -41,5 +41,10 @@ public class FXDealsController {
     @GetMapping("/get-deal/pagination/{offset}/{pageSize}")
     public List<FXDeal> getFXDealWithPagination(@PathVariable int offset, @PathVariable int pageSize) throws FiledNotFoundException, PaginationValueException {
         return fxService.getAllFXDealsWithPagination(offset, pageSize);
+    }
+
+    @GetMapping("/get-deal/sort-pagination/{field}/{offset}/{pageSize}")
+    public List<FXDeal> getFXDealSortedWithPagination(@PathVariable String field, @PathVariable int offset, @PathVariable int pageSize) throws FiledNotFoundException, PaginationValueException {
+        return fxService.getAllFXDealsSortedWithPagination(offset, pageSize, field);
     }
 }

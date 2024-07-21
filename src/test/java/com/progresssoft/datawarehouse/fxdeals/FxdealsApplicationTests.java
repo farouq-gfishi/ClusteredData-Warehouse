@@ -158,4 +158,37 @@ class FxdealsApplicationTests {
 				.then()
 				.statusCode(400);
 	}
+
+	@Test
+	public void FXDealsApplication_GetFXDealSortedWithPagination_ReturnPaginationDeals() {
+		int offset = 0;
+		int pageSize = 2;
+		String field = "amountDeal";
+		Response response = given()
+				.port(port)
+				.basePath("/api")
+				.when()
+				.get("/get-deal/sort-pagination/{field}/{offset}/{pageSize}", field, offset, pageSize)
+				.then()
+				.statusCode(200)
+				.extract().response();
+		response.then()
+				.body("$", hasSize(2))
+				.body("[0].amountDeal", equalTo(55.32f))
+				.body("[1].amountDeal", equalTo(99.43f));
+	}
+
+	@Test
+	public void FXDealsApplication_GetFXDealSortedWithPagination_BadRequest() {
+		int offset = 2;
+		int pageSize = 20;
+		String field = "unavailableField";
+		given()
+				.port(port)
+				.basePath("/api")
+				.when()
+				.get("/get-deal/sort-pagination/{field}/{offset}/{pageSize}", field, offset, pageSize)
+				.then()
+				.statusCode(400);
+	}
 }

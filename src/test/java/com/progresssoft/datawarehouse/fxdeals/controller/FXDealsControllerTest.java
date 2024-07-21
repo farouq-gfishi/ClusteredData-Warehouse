@@ -17,16 +17,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
 public class FXDealsControllerTest {
 
-    @Mock
-    private FXService fxService;
+    private final FXService fxService = mock(FXService.class);
 
-    @InjectMocks
-    private FXDealsController fxDealsController;
+    private final FXDealsController fxDealsController = new FXDealsController(fxService);
 
     @Test
     void FxController_SaveDeal_ReturnsFxDeal() throws DealExistsException {
@@ -71,6 +69,22 @@ public class FXDealsControllerTest {
         );
         when(fxService.getAllFXDealsWithPagination(offset, pageSize)).thenReturn(fxDeals);
         List<FXDeal> returnedDeals = fxDealsController.getFXDealWithPagination(offset, pageSize);
+        Assertions.assertEquals(fxDeals, returnedDeals);
+    }
+
+    @Test
+    void FxController_GetFXDealSortedWithPagination_ReturnsFxDeals() throws FiledNotFoundException, PaginationValueException {
+        int offset = 0;
+        int pageSize = 10;
+        String field = "amountDeal";
+        List<FXDeal> fxDeals = new ArrayList<>(
+                Arrays.asList(
+                        new FXDeal(1, "EUR", "USD", 102.25),
+                        new FXDeal(2, "USD", "EUR", 201.23)
+                )
+        );
+        when(fxService.getAllFXDealsSortedWithPagination(offset, pageSize, field)).thenReturn(fxDeals);
+        List<FXDeal> returnedDeals = fxDealsController.getFXDealSortedWithPagination(field, offset, pageSize);
         Assertions.assertEquals(fxDeals, returnedDeals);
     }
 }

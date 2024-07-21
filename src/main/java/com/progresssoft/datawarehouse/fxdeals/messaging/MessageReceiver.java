@@ -20,7 +20,6 @@ public class MessageReceiver {
 
     private final FXService fxService;
 
-    @Autowired
     public MessageReceiver(FXService fxService) {
         this.fxService = fxService;
     }

@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ActiveProfiles;
 import java.util.List;
 
@@ -86,6 +89,24 @@ public class MysqlRepositoryTest {
         Assertions.assertEquals(2, pageResult.getSize());
         Assertions.assertEquals(3, pageResult.getTotalElements());
         Assertions.assertEquals(fxDeal1.getDealId(), pageResult.getContent().get(0).getDealId());
+        Assertions.assertEquals(fxDeal2.getDealId(), pageResult.getContent().get(1).getDealId());
+    }
+
+    @Test
+    public void MysqlRepository_FindAllSortedWithPagination_ReturnPagedResults() {
+        FXDeal fxDeal1 = new FXDeal(1, "USD", "EUR", 142.1);
+        FXDeal fxDeal2 = new FXDeal(2, "EUR", "USD", 112.5);
+        FXDeal fxDeal3 = new FXDeal(3, "GBP", "USD", 98.7);
+        fxRepository.save(fxDeal1);
+        fxRepository.save(fxDeal2);
+        fxRepository.save(fxDeal3);
+        int offset = 0;
+        int pageSize = 2;
+        String field = "amountDeal";
+        Pageable paging = PageRequest.of(offset, pageSize, Sort.by(field));
+        Page<FXDeal> pageResult = fxRepository.findAllSortedWithPagination(paging);
+        Assertions.assertEquals(2, pageResult.getSize());
+        Assertions.assertEquals(fxDeal3.getDealId(), pageResult.getContent().get(0).getDealId());
         Assertions.assertEquals(fxDeal2.getDealId(), pageResult.getContent().get(1).getDealId());
     }
 

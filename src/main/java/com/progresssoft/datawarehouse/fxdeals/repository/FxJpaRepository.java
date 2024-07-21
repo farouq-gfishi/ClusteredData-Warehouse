@@ -13,5 +13,4 @@ import java.util.List;
 public interface FxJpaRepository extends JpaRepository<FXDeal, Integer>, PagingAndSortingRepository<FXDeal, Integer> {
     boolean existsByDealId(int dealId);
     FXDeal getByDealId(int dealId);
-
 }

@@ -13,15 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ValidCurrencyCodeValidatorTest {
 
-    private ValidCurrencyCodeValidator validator;
+    private final ValidCurrencyCodeValidator validator = new ValidCurrencyCodeValidator();
 
-    @Mock
     private ConstraintValidatorContext context;
-
-    @BeforeEach
-    void setUp() {
-        validator = new ValidCurrencyCodeValidator();
-    }
 
     @Test
     void testValidCurrencyCode() {

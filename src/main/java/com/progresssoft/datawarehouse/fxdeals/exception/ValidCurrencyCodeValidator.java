@@ -7,8 +7,6 @@ import jakarta.validation.ConstraintValidatorContext;
 import java.util.Currency;
 import java.util.Set;
 
-
-// TODO: unit testing
 public class ValidCurrencyCodeValidator implements ConstraintValidator<ValidCurrencyCode, String> {
 
     @Override

@@ -12,8 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.*;
 import org.springframework.test.context.ActiveProfiles;
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,14 +21,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
 public class FxServiceTest {
 
-    @Mock
-    private FxRepository fxRepository;
+    private final FxRepository fxRepository = mock(FxRepository.class);
 
-    @InjectMocks
-    private FXService fxService;
+    private final FXService fxService = new FXService(fxRepository);
 
     @Test
     public void FxService_SaveDeal_ReturnsFxDeal() throws DealExistsException {
@@ -118,6 +114,59 @@ public class FxServiceTest {
         Page<FXDeal> emptyPage = new PageImpl<>(Collections.emptyList());
         when(fxRepository.findAllWithPagination(offset, pageSize)).thenReturn(emptyPage);
         assertThrows(FiledNotFoundException.class, () -> fxService.getAllFXDealsWithPagination(offset, pageSize));
+    }
+
+    @Test
+    public void FxService_GetAllFXDealsSortedWithPagination_ReturnsPagedResults() throws FiledNotFoundException, PaginationValueException {
+        int offset = 0;
+        int pageSize = 10;
+        String field = "amountDeal";
+        List<FXDeal> fxDeals = Arrays.asList(
+                new FXDeal(1, "USD", "EUR", 121.15),
+                new FXDeal(2, "EUR", "USD", 112.50)
+        );
+        Page<FXDeal> page = new PageImpl<>(fxDeals);
+        Pageable paging = PageRequest.of(offset, pageSize, Sort.by(field));
+        when(fxRepository.findAllSortedWithPagination(paging)).thenReturn(page);
+        List<FXDeal> pagedDeals = fxService.getAllFXDealsSortedWithPagination(offset, pageSize, field);
+        assertNotNull(pagedDeals);
+        assertEquals(pagedDeals.size(), 2);
+        assertEquals(pagedDeals.get(0).getDealId(), 1);
+        assertEquals(pagedDeals.get(1).getDealId(), 2);
+    }
+
+    @Test
+    public void FxService_GetAllFXDealsSortedWithPagination_InvalidOffsetOrPageSize() {
+        int offset = -1;
+        int pageSize = 0;
+        String field = "amountDeal";
+        assertThrows(PaginationValueException.class, () -> fxService.getAllFXDealsSortedWithPagination(offset, pageSize, field));
+    }
+
+    @Test
+    public void FxService_GetAllFXDealsSortedWithPagination_NoDealsFound() {
+        int offset = 0;
+        int pageSize = 10;
+        String field = "amountDeal";
+        Page<FXDeal> emptyPage = new PageImpl<>(Collections.emptyList());
+        Pageable paging = PageRequest.of(offset, pageSize, Sort.by(field));
+        when(fxRepository.findAllSortedWithPagination(paging)).thenReturn(emptyPage);
+        assertThrows(FiledNotFoundException.class, () -> fxService.getAllFXDealsSortedWithPagination(offset, pageSize, field));
+    }
+
+    @Test
+    public void FxService_GetAllFXDealsSortedWithPagination_FieldNotFound() {
+        int offset = 0;
+        int pageSize = 2;
+        String field = "unknownField";
+        List<FXDeal> fxDeals = Arrays.asList(
+                new FXDeal(1, "USD", "EUR", 121.15),
+                new FXDeal(2, "EUR", "USD", 112.50)
+        );
+        Page<FXDeal> page = new PageImpl<>(fxDeals);
+        Pageable paging = PageRequest.of(offset, pageSize, Sort.by(field));
+        when(fxRepository.findAllSortedWithPagination(paging)).thenReturn(page);
+        assertThrows(FiledNotFoundException.class, () -> fxService.getAllFXDealsSortedWithPagination(offset, pageSize, field));
     }
 
 }
